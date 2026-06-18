@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 720" fill="none">
+  <defs>
+    <linearGradient id="lw" x1="100" y1="0" x2="100" y2="720">
+      <stop stop-color="#1A2332"/><stop offset="1" stop-color="#0F1520"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="720" fill="url(#lw)"/>
+  <!-- Bed -->
+  <g transform="translate(25,480)">
+    <ellipse cx="75" cy="95" rx="70" ry="8" fill="#000" opacity="0.2"/>
+    <path d="M10 55 L140 55 L130 85 L20 85 Z" fill="#5C4033" stroke="#000" stroke-width="2.5"/>
+    <path d="M20 55 L30 25 L130 25 L140 55 Z" fill="#4A3728" stroke="#000" stroke-width="2.5"/>
+    <rect x="25" y="58" width="100" height="22" rx="3" fill="#1E3A5F" stroke="#000" stroke-width="2"/>
+    <rect x="25" y="58" width="100" height="8" fill="#F59E0B" opacity="0.9"/>
+    <ellipse cx="45" cy="38" rx="18" ry="12" fill="#F8FAFC" stroke="#000" stroke-width="2"/>
+  </g>
+  <!-- Wardrobe -->
+  <g transform="translate(15,200)">
+    <rect x="0" y="40" width="100" height="180" fill="#5C4033" stroke="#000" stroke-width="2.5"/>
+    <path d="M0 40 L12 0 L112 0 L100 40 Z" fill="#6B4423" stroke="#000" stroke-width="2.5"/>
+    <line x1="50" y1="55" x2="50" y2="210" stroke="#D4A853" stroke-width="2"/>
+    <circle cx="42" cy="130" r="4" fill="#FBBF24" stroke="#000" stroke-width="1.5"/>
+    <circle cx="58" cy="130" r="4" fill="#FBBF24" stroke="#000" stroke-width="1.5"/>
+  </g>
+  <!-- Unity collectible -->
+  <g transform="translate(30,60)">
+    <rect x="0" y="0" width="80" height="55" rx="6" fill="#1F2937" stroke="#000" stroke-width="2"/>
+    <circle cx="40" cy="28" r="18" fill="#FFF" stroke="#000" stroke-width="2"/>
+    <path d="M40 18 L48 38 L32 38 Z" fill="#1F2937"/>
+    <text x="40" y="52" text-anchor="middle" fill="#FFF" font-size="8" font-weight="bold">UNITY</text>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 160" fill="none">
+  <defs>
+    <radialGradient id="lampGlow" cx="50" cy="30" r="80">
+      <stop stop-color="#FDE68A" stop-opacity="0.9"/><stop offset="1" stop-color="#F59E0B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="lampSh"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/></filter>
+  </defs>
+  <ellipse cx="50" cy="140" rx="60" ry="40" fill="url(#lampGlow)" opacity="0.35"/>
+  <g filter="url(#lampSh)">
+    <rect x="46" y="100" width="8" height="55" fill="#374151" stroke="#000" stroke-width="2"/>
+    <ellipse cx="50" cy="155" rx="22" ry="5" fill="#1F2937" stroke="#000" stroke-width="2"/>
+    <path d="M15 95 L85 95 L70 55 L30 55 Z" fill="#1F2937" stroke="#000" stroke-width="3"/>
+    <path d="M22 95 L78 95 L66 62 L34 62 Z" fill="#FBBF24" opacity="0.15"/>
+    <circle cx="50" cy="75" r="12" fill="#FDE68A" stroke="#000" stroke-width="2"/>
+    <circle cx="50" cy="75" r="6" fill="#FFF" opacity="0.8"/>
+    <!-- Arm -->
+    <path d="M50 100 L50 55" stroke="#374151" stroke-width="5" stroke-linecap="round"/>
+    <path d="M50 55 L20 45" stroke="#374151" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="20" cy="45" r="6" fill="#475569" stroke="#000" stroke-width="2"/>
+  </g>
+</svg>

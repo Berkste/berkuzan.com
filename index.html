@@ -2,473 +2,211 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Berk Uzan — Developer, Game Creator, AI Explorer. Premium portfolio and blog.">
-  <title>Berk Uzan — Developer & Creator</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="BERKVERSE — Enter the creative universe of Berk Uzan">
+  <meta name="theme-color" content="#0B1426">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23F59E0B'/><text x='16' y='22' text-anchor='middle' font-size='14' fill='%230B1426'>B</text></svg>">
+  <title>BERKVERSE — Berk Uzan</title>
+  <style>html,body{background:#0B1426;margin:0}</style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Scroll Progress -->
-  <div class="scroll-progress" aria-hidden="true">
-    <div class="scroll-progress__bar"></div>
-  </div>
-
-  <!-- Noise Overlay -->
-  <div class="noise-overlay" aria-hidden="true"></div>
-
-  <!-- Navigation -->
-  <header class="nav-header">
-    <nav class="nav container" aria-label="Main navigation">
-      <a href="#" class="nav__logo">
-        <span class="nav__logo-text">Berk Uzan</span>
-      </a>
-      <ul class="nav__links" role="list">
-        <li><a href="#about" class="nav__link">About</a></li>
-        <li><a href="#projects" class="nav__link">Projects</a></li>
-        <li><a href="#blog" class="nav__link">Blog</a></li>
-        <li><a href="#skills" class="nav__link">Skills</a></li>
-        <li><a href="#contact" class="nav__link nav__link--cta">Contact</a></li>
-      </ul>
-      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-      </button>
-    </nav>
-    <div class="nav__mobile-menu" aria-hidden="true">
-      <a href="#about" class="nav__mobile-link">About</a>
-      <a href="#projects" class="nav__mobile-link">Projects</a>
-      <a href="#blog" class="nav__mobile-link">Blog</a>
-      <a href="#skills" class="nav__mobile-link">Skills</a>
-      <a href="#contact" class="nav__mobile-link">Contact</a>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- HERO -->
-    <section class="hero" id="hero" aria-label="Introduction">
-      <canvas class="hero__canvas" aria-hidden="true"></canvas>
-      <div class="hero__grid" aria-hidden="true"></div>
-      <div class="hero__content container">
-        <p class="hero__eyebrow reveal">Available for select projects</p>
-        <h1 class="hero__title">
-          <span class="hero__name glitch" data-text="Berk Uzan">Berk Uzan</span>
-        </h1>
-        <p class="hero__subtitle typewriter" aria-label="Developer, Game Creator, AI Explorer, Rap and Cinema Enthusiast">
-          <span class="typewriter__text"></span>
-          <span class="typewriter__cursor" aria-hidden="true">|</span>
-        </p>
-        <div class="hero__actions reveal reveal--delay-2">
-          <a href="#projects" class="btn btn--primary">
-            <span>View Projects</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-          <a href="#" class="btn btn--ghost" download>
-            <span>Download CV</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M8 3v8M5 8l3 3 3-3M3 13h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-        </div>
-        <div class="hero__scroll-hint reveal reveal--delay-3" aria-hidden="true">
-          <span>Scroll</span>
-          <div class="hero__scroll-line"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section about" id="about" aria-labelledby="about-heading">
-      <div class="container">
-        <div class="section__header reveal">
-          <span class="section__label">01 — About</span>
-          <h2 class="section__title" id="about-heading">Building at the intersection of code, games & creativity</h2>
-        </div>
-        <div class="about__grid">
-          <div class="about__text reveal">
-            <p class="about__lead">I'm a developer who thinks in systems and feels in stories. From Unity ML pipelines to Flutter apps, I build products that feel intentional — not just functional.</p>
-            <p class="about__body">My work spans game development, mobile engineering, and experimental AI tools. Off-screen, rap music and cinema shape how I think about rhythm, pacing, and narrative in software.</p>
-            <div class="about__stats">
-              <div class="about__stat">
-                <span class="about__stat-value">4+</span>
-                <span class="about__stat-label">Years building</span>
-              </div>
-              <div class="about__stat">
-                <span class="about__stat-value">12+</span>
-                <span class="about__stat-label">Projects shipped</span>
-              </div>
-              <div class="about__stat">
-                <span class="about__stat-value">∞</span>
-                <span class="about__stat-label">Curiosity</span>
-              </div>
-            </div>
-          </div>
-          <div class="about__visual reveal reveal--delay-1">
-            <div class="glass-card about__card">
-              <div class="about__card-glow" aria-hidden="true"></div>
-              <ul class="about__pillars" role="list">
-                <li class="about__pillar" data-index="01">
-                  <span class="about__pillar-icon">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 4l8 6-8 6V4z" stroke="currentColor" stroke-width="1.5"/></svg>
-                  </span>
-                  <div>
-                    <strong>Coding</strong>
-                    <span>Clean architecture, modern web & systems thinking</span>
-                  </div>
-                </li>
-                <li class="about__pillar" data-index="02">
-                  <span class="about__pillar-icon">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="5" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 15v2M12 15v2M6 7h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-                  </span>
-                  <div>
-                    <strong>Game Development</strong>
-                    <span>Unity, C#, gameplay systems & ML-driven NPCs</span>
-                  </div>
-                </li>
-                <li class="about__pillar" data-index="03">
-                  <span class="about__pillar-icon">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="5" y="2" width="10" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="15" r="1" fill="currentColor"/></svg>
-                  </span>
-                  <div>
-                    <strong>Flutter Apps</strong>
-                    <span>Cross-platform mobile with polished UX</span>
-                  </div>
-                </li>
-                <li class="about__pillar" data-index="04">
-                  <span class="about__pillar-icon">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-                  </span>
-                  <div>
-                    <strong>AI Exploration</strong>
-                    <span>Intelligent systems, generative tools & experiments</span>
-                  </div>
-                </li>
-                <li class="about__pillar" data-index="05">
-                  <span class="about__pillar-icon">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 14l4-8 4 5 4-9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  </span>
-                  <div>
-                    <strong>Rap & Cinema</strong>
-                    <span>Creative rhythm that informs how I design experiences</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="section projects" id="projects" aria-labelledby="projects-heading">
-      <div class="container">
-        <div class="section__header reveal">
-          <span class="section__label">02 — Projects</span>
-          <h2 class="section__title" id="projects-heading">Selected work</h2>
-          <p class="section__desc">Experiments and products where engineering meets creative vision.</p>
-        </div>
-        <div class="projects__grid">
-
-          <article class="project-card reveal" data-project="unity-ml" tabindex="0" role="button" aria-label="Unity ML NPC System">
-            <div class="project-card__inner">
-              <div class="project-card__visual project-card__visual--unity">
-                <div class="project-card__icon">🎮</div>
-              </div>
-              <div class="project-card__content">
-                <div class="project-card__tags">
-                  <span class="tag tag--unity">Unity</span>
-                  <span class="tag tag--ai">AI</span>
-                  <span class="tag tag--csharp">C#</span>
-                </div>
-                <h3 class="project-card__title">Unity ML NPC System</h3>
-                <p class="project-card__desc">Machine learning-driven NPC behavior with dynamic dialogue trees and adaptive decision-making in real-time gameplay.</p>
-              </div>
-              <div class="project-card__overlay">
-                <span class="project-card__cta">View details →</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card reveal reveal--delay-1" data-project="flutter-social" tabindex="0" role="button" aria-label="Flutter Social App">
-            <div class="project-card__inner">
-              <div class="project-card__visual project-card__visual--flutter">
-                <div class="project-card__icon">📱</div>
-              </div>
-              <div class="project-card__content">
-                <div class="project-card__tags">
-                  <span class="tag tag--flutter">Flutter</span>
-                  <span class="tag tag--mobile">Mobile</span>
-                </div>
-                <h3 class="project-card__title">Flutter Social App</h3>
-                <p class="project-card__desc">A cross-platform social experience with real-time feeds, clean architecture, and buttery-smooth animations.</p>
-              </div>
-              <div class="project-card__overlay">
-                <span class="project-card__cta">View details →</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card reveal reveal--delay-2" data-project="ai-words" tabindex="0" role="button" aria-label="AI Word Generator Tool">
-            <div class="project-card__inner">
-              <div class="project-card__visual project-card__visual--ai">
-                <div class="project-card__icon">✨</div>
-              </div>
-              <div class="project-card__content">
-                <div class="project-card__tags">
-                  <span class="tag tag--ai">AI</span>
-                  <span class="tag tag--web">Web</span>
-                </div>
-                <h3 class="project-card__title">AI Word Generator Tool</h3>
-                <p class="project-card__desc">An intelligent word generation utility powered by language models — built for writers, devs, and creative workflows.</p>
-              </div>
-              <div class="project-card__overlay">
-                <span class="project-card__cta">View details →</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card project-card--wide reveal reveal--delay-3" data-project="game-prototypes" tabindex="0" role="button" aria-label="Game Prototype Experiments">
-            <div class="project-card__inner">
-              <div class="project-card__visual project-card__visual--game">
-                <div class="project-card__icon">🕹️</div>
-              </div>
-              <div class="project-card__content">
-                <div class="project-card__tags">
-                  <span class="tag tag--unity">Unity</span>
-                  <span class="tag tag--game">Game Dev</span>
-                </div>
-                <h3 class="project-card__title">Game Prototype Experiments</h3>
-                <p class="project-card__desc">A collection of rapid game prototypes exploring mechanics, feel, and emergent gameplay — from physics puzzles to narrative sandboxes.</p>
-              </div>
-              <div class="project-card__overlay">
-                <span class="project-card__cta">View details →</span>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- BLOG -->
-    <section class="section blog" id="blog" aria-labelledby="blog-heading">
-      <div class="container">
-        <div class="section__header reveal">
-          <span class="section__label">03 — Blog</span>
-          <h2 class="section__title" id="blog-heading">Thoughts & essays</h2>
-          <p class="section__desc">Long-form writing on engineering, games, and the creative process.</p>
-        </div>
-        <div class="blog__grid">
-
-          <article class="blog-card blog-card--featured reveal">
-            <a href="#" class="blog-card__link">
-              <div class="blog-card__image blog-card__image--unity" aria-hidden="true">
-                <div class="blog-card__image-gradient"></div>
-              </div>
-              <div class="blog-card__body">
-                <div class="blog-card__meta">
-                  <span class="pill pill--ai">AI & Games</span>
-                  <span class="blog-card__time">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/><path d="M7 4v3.5l2.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-                    8 min read
-                  </span>
-                </div>
-                <h3 class="blog-card__title">Building Intelligent NPC Systems in Unity</h3>
-                <p class="blog-card__excerpt">How machine learning transforms static NPC behavior into dynamic, believable characters that respond to player actions in real time.</p>
-                <span class="blog-card__read">Read article →</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="blog-card reveal reveal--delay-1">
-            <a href="#" class="blog-card__link">
-              <div class="blog-card__image blog-card__image--flutter" aria-hidden="true">
-                <div class="blog-card__image-gradient"></div>
-              </div>
-              <div class="blog-card__body">
-                <div class="blog-card__meta">
-                  <span class="pill pill--mobile">Mobile</span>
-                  <span class="blog-card__time">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/><path d="M7 4v3.5l2.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-                    6 min read
-                  </span>
-                </div>
-                <h3 class="blog-card__title">Flutter Architecture Thoughts</h3>
-                <p class="blog-card__excerpt">Patterns for scalable Flutter apps — state management, folder structure, and keeping your codebase maintainable.</p>
-                <span class="blog-card__read">Read article →</span>
-              </div>
-            </a>
-          </article>
-
-          <article class="blog-card reveal reveal--delay-2">
-            <a href="#" class="blog-card__link">
-              <div class="blog-card__image blog-card__image--creative" aria-hidden="true">
-                <div class="blog-card__image-gradient"></div>
-              </div>
-              <div class="blog-card__body">
-                <div class="blog-card__meta">
-                  <span class="pill pill--creative">Creative</span>
-                  <span class="blog-card__time">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/><path d="M7 4v3.5l2.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-                    5 min read
-                  </span>
-                </div>
-                <h3 class="blog-card__title">Cinema, Rap and Code: Creative Overlap</h3>
-                <p class="blog-card__excerpt">What Tarantino's pacing and Kendrick's structure teach us about building software that resonates emotionally.</p>
-                <span class="blog-card__read">Read article →</span>
-              </div>
-            </a>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="section skills" id="skills" aria-labelledby="skills-heading">
-      <div class="container">
-        <div class="section__header reveal">
-          <span class="section__label">04 — Skills</span>
-          <h2 class="section__title" id="skills-heading">Technical toolkit</h2>
-        </div>
-        <div class="skills__grid">
-          <div class="skills__radial reveal">
-            <div class="radial-chart" aria-hidden="true">
-              <svg viewBox="0 0 200 200" class="radial-chart__svg">
-                <circle cx="100" cy="100" r="80" class="radial-chart__bg"/>
-                <circle cx="100" cy="100" r="80" class="radial-chart__ring" data-value="88" style="--ring-color: var(--accent-purple)"/>
-                <circle cx="100" cy="100" r="62" class="radial-chart__ring" data-value="82" style="--ring-color: var(--accent-cyan)"/>
-                <circle cx="100" cy="100" r="44" class="radial-chart__ring" data-value="78" style="--ring-color: var(--accent-blue)"/>
-                <circle cx="100" cy="100" r="26" class="radial-chart__ring" data-value="72" style="--ring-color: var(--accent-violet)"/>
-              </svg>
-              <div class="radial-chart__center">
-                <span class="radial-chart__value">85%</span>
-                <span class="radial-chart__label">Overall</span>
-              </div>
-            </div>
-          </div>
-          <div class="skills__bars reveal reveal--delay-1">
-            <div class="skill-category" data-category="frontend">
-              <div class="skill-category__header">
-                <span class="skill-category__name">Frontend</span>
-                <span class="skill-category__level">Advanced</span>
-              </div>
-              <div class="skill-bar" data-value="90">
-                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
-                <span class="skill-bar__label">JavaScript, HTML, CSS</span>
-              </div>
-            </div>
-            <div class="skill-category" data-category="mobile">
-              <div class="skill-category__header">
-                <span class="skill-category__name">Mobile</span>
-                <span class="skill-category__level">Proficient</span>
-              </div>
-              <div class="skill-bar" data-value="82">
-                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
-                <span class="skill-bar__label">Flutter, Dart</span>
-              </div>
-            </div>
-            <div class="skill-category" data-category="gamedev">
-              <div class="skill-category__header">
-                <span class="skill-category__name">Game Dev</span>
-                <span class="skill-category__level">Advanced</span>
-              </div>
-              <div class="skill-bar" data-value="88">
-                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
-                <span class="skill-bar__label">Unity, C#</span>
-              </div>
-            </div>
-            <div class="skill-category" data-category="ai">
-              <div class="skill-category__header">
-                <span class="skill-category__name">AI / Experimental</span>
-                <span class="skill-category__level">Growing</span>
-              </div>
-              <div class="skill-bar" data-value="75">
-                <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
-                <span class="skill-bar__label">ML Systems, LLM Integration</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section contact" id="contact" aria-labelledby="contact-heading">
-      <div class="container">
-        <div class="section__header section__header--center reveal">
-          <span class="section__label">05 — Contact</span>
-          <h2 class="section__title" id="contact-heading">Let's build something</h2>
-          <p class="section__desc">Have a project in mind? I'd love to hear about it.</p>
-        </div>
-        <div class="contact__wrapper reveal reveal--delay-1">
-          <form class="contact__form glass-card" novalidate>
-            <div class="form-group">
-              <input type="text" id="name" name="name" class="form-input" placeholder=" " required autocomplete="name">
-              <label for="name" class="form-label">Your name</label>
-            </div>
-            <div class="form-group">
-              <input type="email" id="email" name="email" class="form-input" placeholder=" " required autocomplete="email">
-              <label for="email" class="form-label">Email address</label>
-            </div>
-            <div class="form-group">
-              <textarea id="message" name="message" class="form-input form-input--textarea" placeholder=" " rows="4" required></textarea>
-              <label for="message" class="form-label">Your message</label>
-            </div>
-            <button type="submit" class="btn btn--submit">
-              <span class="btn__shimmer" aria-hidden="true"></span>
-              <span>Send message</span>
-            </button>
-          </form>
-          <div class="contact__info">
-            <a href="mailto:hello@berkuzan.dev" class="contact__link">
-              <span class="contact__link-label">Email</span>
-              <span class="contact__link-value">hello@berkuzan.dev</span>
-            </a>
-            <a href="https://github.com" class="contact__link" target="_blank" rel="noopener noreferrer">
-              <span class="contact__link-label">GitHub</span>
-              <span class="contact__link-value">@berkuzan</span>
-            </a>
-            <a href="https://linkedin.com" class="contact__link" target="_blank" rel="noopener noreferrer">
-              <span class="contact__link-label">LinkedIn</span>
-              <span class="contact__link-value">Berk Uzan</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p class="footer__copy">&copy; 2026 Berk Uzan. Crafted with intention.</p>
-      <p class="footer__tagline">Code · Games · AI · Culture</p>
-    </div>
-  </footer>
-
-  <!-- Project Modal -->
-  <div class="modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
-    <div class="modal__backdrop"></div>
-    <div class="modal__content glass-card">
-      <button class="modal__close" aria-label="Close modal">&times;</button>
-      <div class="modal__tags"></div>
-      <h3 class="modal__title" id="modal-title"></h3>
-      <p class="modal__desc"></p>
-      <div class="modal__actions">
-        <a href="#" class="btn btn--primary modal__link">View project</a>
-        <button class="btn btn--ghost modal__dismiss">Close</button>
-      </div>
+  <div class="intro" id="intro">
+    <div class="intro__stars"></div>
+    <div class="intro__content">
+      <p class="intro__eyebrow">Welcome to</p>
+      <h1 class="intro__title">BERKVERSE</h1>
+      <p class="intro__sub">A South Park-style playable portfolio</p>
+      <p class="intro__hint">Click objects on the desk · Explore the room · Meet Balım</p>
+      <button class="intro__btn" id="btn-enter" type="button">Enter the room</button>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <!-- Main canvas scene -->
+  <div class="scene-wrap" id="scene-wrap">
+    <canvas id="scene" aria-label="BERKVERSE interactive room"></canvas>
+  </div>
+
+  <!-- HUD -->
+  <div class="hud">
+    <div class="hud__left">
+      <span class="hud__brand">BERKVERSE</span>
+      <span class="hud__score" id="hud-score">✦ 0</span>
+    </div>
+    <div class="hud__controls">
+      <button class="hud__btn" id="btn-audio" aria-label="Toggle audio">🔊</button>
+      <span class="hud__hint">Drag · Click desk objects · Explore room</span>
+    </div>
+  </div>
+
+  <!-- Tooltip -->
+  <div class="tooltip" id="tooltip" hidden>
+    <span class="tooltip__label"></span>
+  </div>
+
+  <!-- Mobile joystick -->
+  <div class="joystick" id="joystick">
+    <div class="joystick__ring"><div class="joystick__knob" id="joystick-knob"></div></div>
+  </div>
+
+  <div class="toast" id="toast" hidden><span id="toast-text"></span></div>
+
+  <!-- Section panel -->
+  <div class="panel" id="panel" hidden>
+    <div class="panel__backdrop"></div>
+    <article class="panel__card">
+      <button class="panel__close" id="panel-close" aria-label="Close">&times;</button>
+      <header class="panel__head">
+        <span class="panel__icon" id="panel-icon"></span>
+        <div>
+          <p class="panel__tag" id="panel-tag"></p>
+          <h2 class="panel__title" id="panel-title"></h2>
+        </div>
+      </header>
+      <div class="panel__body" id="panel-body"></div>
+    </article>
+  </div>
+
+  <!-- Templates -->
+  <template id="tpl-about">
+    <div class="about">
+      <div class="about__photo">
+        <div class="about__avatar">BU</div>
+      </div>
+      <p class="lead">I'm Berk — a game developer and software engineer who builds worlds in code, engines, and imagination.</p>
+      <p>I craft interactive experiences with Unity, Flutter, and AI. Every project starts with a feeling — then systems, art, and code follow.</p>
+      <div class="timeline">
+        <div class="timeline__item"><span>2024</span><p>ML-Agent NPC systems & Unity AI experiments</p></div>
+        <div class="timeline__item"><span>2023</span><p>Flutter cross-platform apps & game prototypes</p></div>
+        <div class="timeline__item"><span>2022</span><p>Started building interactive portfolios & tools</p></div>
+        <div class="timeline__item"><span>∞</span><p>Always learning, always creating</p></div>
+      </div>
+      <div class="tags"><span>Unity</span><span>C#</span><span>Flutter</span><span>AI/ML</span><span>JavaScript</span></div>
+    </div>
+  </template>
+
+  <template id="tpl-projects">
+    <div class="cards">
+      <article class="card card--project">
+        <div class="card__img card__img--1"></div>
+        <div class="card__content">
+          <h3>Unity ML NPC System</h3>
+          <p>Machine learning-driven NPC behavior with adaptive dialogue and real-time decision trees.</p>
+          <div class="tags"><span>Unity</span><span>C#</span><span>ML-Agents</span></div>
+          <a href="https://github.com" class="btn" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+      </article>
+      <article class="card card--project">
+        <div class="card__img card__img--2"></div>
+        <div class="card__content">
+          <h3>AI Word Generator</h3>
+          <p>Language-model powered creative tool for writers and developers.</p>
+          <div class="tags"><span>AI</span><span>Python</span><span>Web</span></div>
+          <a href="https://github.com" class="btn" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+      </article>
+      <article class="card card--project">
+        <div class="card__img card__img--3"></div>
+        <div class="card__content">
+          <h3>Game Prototypes</h3>
+          <p>Rapid experiments in mechanics, feel, and emergent gameplay.</p>
+          <div class="tags"><span>Unity</span><span>Game Dev</span></div>
+          <a href="https://github.com" class="btn" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+      </article>
+    </div>
+  </template>
+
+  <template id="tpl-skills">
+    <div class="skills">
+      <p class="lead">Experience stacked like books on the desk — each spine a chapter of the journey.</p>
+      <div class="cards">
+        <article class="card"><small>CLEAN CODE</small><h3>Software Engineering</h3><p>Architecture, patterns, testing, and maintainable systems across web, mobile, and game engines.</p><div class="tags"><span>C#</span><span>TypeScript</span><span>Python</span><span>Dart</span></div></article>
+        <article class="card"><small>DESIGN PATTERNS</small><h3>System Design</h3><p>Scalable app architecture, clean separation of concerns, and production-grade code organization.</p><div class="tags"><span>Flutter</span><span>Unity</span><span>Node.js</span></div></article>
+        <article class="card"><small>GAME PROGRAMMING</small><h3>Game Development</h3><p>Mechanics, AI, physics, and player feel — from prototype to polished experience.</p><div class="tags"><span>Unity</span><span>ML-Agents</span><span>C#</span></div></article>
+      </div>
+      <div class="timeline">
+        <div class="timeline__item"><span>2024</span><p>ML-Agent NPC systems & Unity AI experiments</p></div>
+        <div class="timeline__item"><span>2023</span><p>Flutter cross-platform apps & game prototypes</p></div>
+        <div class="timeline__item"><span>2022</span><p>Interactive portfolios & creative coding tools</p></div>
+      </div>
+    </div>
+  </template>
+
+  <template id="tpl-technologies">
+    <div class="tech">
+      <p class="lead">The tools on the laptop stickers — and the languages running on the monitor.</p>
+      <div class="tags tags--large">
+        <span>TypeScript</span><span>JavaScript</span><span>Python</span><span>React</span><span>Node.js</span><span>C#</span><span>Unity</span><span>Flutter</span><span>Dart</span><span>Git</span><span>AI/ML</span><span>HTML/CSS</span>
+      </div>
+      <div class="cards">
+        <article class="card"><h3>🖥️ Frontend & Web</h3><p>Interactive experiences, canvas games, and modern web architecture.</p><div class="tags"><span>React</span><span>TS</span><span>Canvas</span></div></article>
+        <article class="card"><h3>🎮 Game Engine</h3><p>Unity development, ML-Agents, physics systems, and gameplay programming.</p><div class="tags"><span>Unity</span><span>C#</span><span>ML-Agents</span></div></article>
+        <article class="card"><h3>📱 Mobile</h3><p>Cross-platform Flutter apps with clean architecture and fluid UX.</p><div class="tags"><span>Flutter</span><span>Dart</span><span>Firebase</span></div></article>
+      </div>
+    </div>
+  </template>
+
+  <template id="tpl-experiments">
+    <div class="lab">
+      <p class="lead">The desk lamp illuminates the lab — where wild ideas become playable prototypes.</p>
+      <div class="cards">
+        <article class="card"><h3>🤖 ML-Agent NPC Demo</h3><p>Adaptive AI behavior trained with Unity ML-Agents. NPCs learn, react, and evolve.</p><div class="tags"><span>Unity</span><span>ML-Agents</span><span>Python</span></div></article>
+        <article class="card"><h3>⚡ Physics Puzzle Lab</h3><p>Mechanic exploration sandbox for game-feel tuning and emergent solutions.</p><div class="tags"><span>Unity</span><span>C#</span></div></article>
+        <article class="card"><h3>📖 Narrative Sandbox</h3><p>Procedural dialogue systems and branching story experiments.</p><div class="tags"><span>Unity</span><span>AI</span></div></article>
+        <article class="card"><h3>🧠 AI Integration Tests</h3><p>Connecting LLMs to game systems for dynamic content generation.</p><div class="tags"><span>AI</span><span>C#</span></div></article>
+      </div>
+    </div>
+  </template>
+
+  <template id="tpl-balim">
+    <div class="balim">
+      <div class="balim__hero">🐱</div>
+      <p class="lead">This is Balım — the black cat who sleeps on the Clean Code stack and supervises every commit.</p>
+      <div class="cards">
+        <article class="card"><h3>Chief Nap Officer</h3><p>Balım believes the best code is written after a 4-hour nap on the warmest keyboard.</p></article>
+        <article class="card"><h3>Bug Hunter</h3><p>Has never caught a bug, but excels at walking across the keyboard at critical moments.</p></article>
+        <article class="card"><h3>Photo Gallery</h3><p>Sleeping on books · Staring at monitors · Demanding treats at 3 AM · Winning every sunbeam.</p></article>
+        <article class="card"><h3>Fun Facts</h3><p>Black cat · Professional sunbeam locator · Speaks fluent meow · Loves boxes and warm laptops</p></article>
+      </div>
+    </div>
+  </template>
+
+  <template id="tpl-blog">
+    <div class="cards">
+      <article class="card"><small>8 min read</small><h3>Building Intelligent NPC Systems in Unity</h3><p>How ML-Agents transforms static characters into living, responsive entities.</p></article>
+      <article class="card"><small>6 min read</small><h3>Flutter Architecture for Scale</h3><p>Patterns for maintainable cross-platform apps that feel native everywhere.</p></article>
+      <article class="card"><small>5 min read</small><h3>Cinema, Rap & Code</h3><p>What storytelling in other mediums teaches us about software design.</p></article>
+      <article class="card"><small>4 min read</small><h3>Why Portfolios Should Be Playable</h3><p>The case for interactive self-expression on the web.</p></article>
+    </div>
+  </template>
+
+  <template id="tpl-career">
+    <div class="solar">
+      <p class="lead">A journey through code, games, and creative technology.</p>
+      <div class="solar__system">
+        <div class="planet-item" data-year="2024"><div class="planet-item__orb planet-item__orb--1"></div><div><strong>2024 — AI & Games</strong><p>ML-Agent NPC systems, Unity AI integration</p></div></div>
+        <div class="planet-item" data-year="2023"><div class="planet-item__orb planet-item__orb--2"></div><div><strong>2023 — Mobile & Web</strong><p>Flutter apps, interactive web experiences</p></div></div>
+        <div class="planet-item" data-year="2022"><div class="planet-item__orb planet-item__orb--3"></div><div><strong>2022 — Game Dev Focus</strong><p>Unity prototypes, game mechanics research</p></div></div>
+        <div class="planet-item" data-year="2021"><div class="planet-item__orb planet-item__orb--4"></div><div><strong>2021 — Foundations</strong><p>Computer science, first game projects</p></div></div>
+      </div>
+    </div>
+  </template>
+
+  <template id="tpl-contact">
+    <div class="contact">
+      <p class="lead">Let's build something extraordinary together.</p>
+      <a href="mailto:hello@berkuzan.dev" class="contact__link"><span>Email</span>hello@berkuzan.dev</a>
+      <a href="https://github.com" class="contact__link" target="_blank" rel="noopener"><span>GitHub</span>@berkuzan</a>
+      <a href="https://linkedin.com" class="contact__link" target="_blank" rel="noopener"><span>LinkedIn</span>Berk Uzan</a>
+      <a href="https://twitter.com" class="contact__link" target="_blank" rel="noopener"><span>Twitter / X</span>@berkuzan</a>
+    </div>
+  </template>
+
+  <script src="js/camera.js"></script>
+  <script src="js/world.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 280" fill="none">
+  <defs>
+    <linearGradient id="bezel" x1="170" y1="0" x2="170" y2="260">
+      <stop stop-color="#374151"/><stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="170" y1="20" x2="170" y2="220">
+      <stop stop-color="#0F172A"/><stop offset="1" stop-color="#020617"/>
+    </linearGradient>
+    <filter id="monGlow"><feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#22D3EE" flood-opacity="0.35"/></filter>
+  </defs>
+  <g filter="url(#monGlow)">
+    <rect x="8" y="8" width="324" height="228" rx="12" fill="url(#bezel)" stroke="#000" stroke-width="3"/>
+    <rect x="22" y="22" width="296" height="196" rx="6" fill="url(#screen)" stroke="#1E293B" stroke-width="2"/>
+    <!-- Code content -->
+    <text x="36" y="52" fill="#60A5FA" font-family="Consolas,monospace" font-size="13">&lt;html&gt;</text>
+    <text x="48" y="72" fill="#4ADE80" font-family="Consolas,monospace" font-size="12">  &lt;title&gt;Berkverse&lt;/title&gt;</text>
+    <text x="48" y="92" fill="#F8FAFC" font-family="Consolas,monospace" font-size="12">  &lt;h1&gt;Hello World!&lt;/h1&gt;</text>
+    <text x="36" y="112" fill="#60A5FA" font-family="Consolas,monospace" font-size="13">&lt;/html&gt;</text>
+    <text x="36" y="140" fill="#FBBF24" font-family="Consolas,monospace" font-size="12">function develop() {</text>
+    <text x="52" y="160" fill="#4ADE80" font-family="Consolas,monospace" font-size="12">  keepCoding();</text>
+    <text x="36" y="180" fill="#FBBF24" font-family="Consolas,monospace" font-size="12">}</text>
+    <rect x="36" y="188" width="8" height="14" fill="#22D3EE" opacity="0.8"/>
+    <!-- Screen glow -->
+    <rect x="22" y="22" width="296" height="196" rx="6" fill="#22D3EE" opacity="0.06"/>
+    <!-- Stand -->
+    <path d="M130 236 L210 236 L195 260 L145 260 Z" fill="#334155" stroke="#000" stroke-width="2.5"/>
+    <rect x="115" y="260" width="110" height="10" rx="4" fill="#475569" stroke="#000" stroke-width="2"/>
+  </g>
+</svg>

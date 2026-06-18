@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 80" fill="none">
+  <defs>
+    <linearGradient id="plate" x1="75" y1="0" x2="75" y2="80">
+      <stop stop-color="#374151"/><stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <filter id="npSh"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.35"/></filter>
+  </defs>
+  <g filter="url(#npSh)">
+    <path d="M10 78 L75 8 L140 78 Z" fill="url(#plate)" stroke="#000" stroke-width="3"/>
+    <path d="M20 72 L75 18 L130 72 Z" fill="#1F2937" opacity="0.5"/>
+    <text x="75" y="48" text-anchor="middle" fill="#FFF" font-size="11" font-weight="bold">BERK UZAN</text>
+    <text x="75" y="60" text-anchor="middle" fill="#4ADE80" font-size="7" font-weight="bold">SOFTWARE ENGINEER</text>
+    <text x="75" y="70" text-anchor="middle" fill="#60A5FA" font-size="7" font-weight="bold">GAME DEVELOPER</text>
+  </g>
+</svg>

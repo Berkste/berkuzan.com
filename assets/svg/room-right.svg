@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 720" fill="none">
+  <defs>
+    <linearGradient id="rw" x1="100" y1="0" x2="100" y2="720">
+      <stop stop-color="#1A2332"/><stop offset="1" stop-color="#0F1520"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="720" fill="url(#rw)"/>
+  <!-- Bookshelf -->
+  <g transform="translate(25,220)">
+    <rect x="0" y="0" width="110" height="180" fill="#5C4033" stroke="#000" stroke-width="2.5"/>
+    <rect x="-5" y="175" width="120" height="12" fill="#4A3728" stroke="#000" stroke-width="2"/>
+    <line x1="0" y1="45" x2="110" y2="45" stroke="#3D2E24" stroke-width="3"/>
+    <line x1="0" y1="90" x2="110" y2="90" stroke="#3D2E24" stroke-width="3"/>
+    <line x1="0" y1="135" x2="110" y2="135" stroke="#3D2E24" stroke-width="3"/>
+    <rect x="8" y="10" width="14" height="30" fill="#7C3AED" stroke="#000" stroke-width="1"/>
+    <rect x="26" y="12" width="14" height="28" fill="#14B8A6" stroke="#000" stroke-width="1"/>
+    <rect x="44" y="8" width="14" height="32" fill="#F59E0B" stroke="#000" stroke-width="1"/>
+    <rect x="62" y="14" width="14" height="26" fill="#EF4444" stroke="#000" stroke-width="1"/>
+    <rect x="80" y="10" width="14" height="30" fill="#3B82F6" stroke="#000" stroke-width="1"/>
+  </g>
+  <!-- Flutter collectible -->
+  <g transform="translate(35,55)">
+    <path d="M40 0 L70 20 L55 55 L25 35 Z" fill="#54C5F8" stroke="#000" stroke-width="2.5"/>
+    <path d="M55 20 L85 0 L70 35 L40 55 Z" fill="#45B7D1" stroke="#000" stroke-width="2"/>
+    <text x="55" y="78" text-anchor="middle" fill="#54C5F8" font-size="11" font-weight="bold">Flutter</text>
+  </g>
+  <!-- Game collectible -->
+  <g transform="translate(40,480)">
+    <circle cx="35" cy="35" r="32" fill="#7C3AED" stroke="#000" stroke-width="2.5"/>
+    <text x="35" y="42" text-anchor="middle" fill="#FFF" font-size="22" font-weight="bold">U</text>
+    <text x="35" y="82" text-anchor="middle" fill="#A78BFA" font-size="8" font-weight="bold">GAME DEV</text>
+  </g>
+  <!-- Extra plant -->
+  <g transform="translate(60,560)">
+    <ellipse cx="35" cy="35" rx="22" ry="28" fill="#166534" stroke="#000" stroke-width="2"/>
+    <rect x="22" y="58" width="26" height="22" rx="3" fill="#E2E8F0" stroke="#000" stroke-width="2"/>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 50" fill="none">
+  <defs>
+    <linearGradient id="kb" x1="90" y1="0" x2="90" y2="50">
+      <stop stop-color="#475569"/><stop offset="1" stop-color="#334155"/>
+    </linearGradient>
+    <filter id="kbSh"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.3"/></filter>
+  </defs>
+  <g filter="url(#kbSh)">
+    <rect x="4" y="8" width="172" height="34" rx="6" fill="url(#kb)" stroke="#000" stroke-width="2.5"/>
+    <rect x="12" y="14" width="14" height="10" rx="2" fill="#1E293B" stroke="#64748B" stroke-width="1"/>
+    <rect x="30" y="14" width="14" height="10" rx="2" fill="#1E293B" stroke="#64748B" stroke-width="1"/>
+    <rect x="48" y="14" width="14" height="10" rx="2" fill="#1E293B" stroke="#64748B" stroke-width="1"/>
+    <rect x="66" y="14" width="14" height="10" rx="2" fill="#1E293B" stroke="#64748B" stroke-width="1"/>
+    <rect x="84" y="14" width="14" height="10" rx="2" fill="#1E293B" stroke="#64748B" stroke-width="1"/>
+    <rect x="102" y="14" width="14" height="10" rx="2" fill="#1E293B" stroke="#64748B" stroke-width="1"/>
+    <rect x="120" y="14" width="14" height="10" rx="2" fill="#1E293B" stroke="#64748B" stroke-width="1"/>
+    <rect x="138" y="14" width="14" height="10" rx="2" fill="#1E293B" stroke="#64748B" stroke-width="1"/>
+    <rect x="156" y="14" width="14" height="10" rx="2" fill="#1E293B" stroke="#64748B" stroke-width="1"/>
+    <rect x="12" y="28" width="158" height="8" rx="2" fill="#1E293B" stroke="#64748B" stroke-width="1"/>
+  </g>
+</svg>

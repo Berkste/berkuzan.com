@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 280" fill="none">
+  <defs>
+    <linearGradient id="gBezel" x1="170" y1="0" x2="170" y2="260">
+      <stop stop-color="#374151"/><stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <filter id="gGlow"><feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#4ADE80" flood-opacity="0.25"/></filter>
+  </defs>
+  <g filter="url(#gGlow)">
+    <rect x="8" y="8" width="324" height="228" rx="12" fill="url(#gBezel)" stroke="#000" stroke-width="3"/>
+    <rect x="22" y="22" width="296" height="196" rx="6" fill="#0A0F1A" stroke="#1E293B" stroke-width="2"/>
+    <text x="36" y="48" fill="#4ADE80" font-family="Consolas,monospace" font-size="13" font-weight="bold">&gt; LIFE'S SHORT.</text>
+    <text x="36" y="68" fill="#4ADE80" font-family="Consolas,monospace" font-size="11">&gt; CODE SOMETHING AWESOME.</text>
+    <!-- Pixel forest scene -->
+    <rect x="36" y="82" width="268" height="120" rx="4" fill="#14532D"/>
+    <rect x="36" y="182" width="268" height="20" fill="#166534"/>
+    <!-- Trees -->
+    <rect x="60" y="120" width="16" height="62" fill="#422006"/>
+    <polygon points="68,90 48,130 88,130" fill="#15803D" stroke="#000" stroke-width="1.5"/>
+    <rect x="200" y="110" width="18" height="72" fill="#422006"/>
+    <polygon points="209,75 185,118 233,118" fill="#166534" stroke="#000" stroke-width="1.5"/>
+    <!-- Campfire -->
+    <circle cx="170" cy="175" r="14" fill="#F59E0B" opacity="0.9"/>
+    <circle cx="170" cy="175" r="8" fill="#FDE68A"/>
+    <!-- Pixel character -->
+    <rect x="148" y="148" width="12" height="18" fill="#DC2626"/>
+    <circle cx="154" cy="140" r="8" fill="#FFDFC4" stroke="#000" stroke-width="1.5"/>
+    <path d="M130 236 L210 236 L195 260 L145 260 Z" fill="#334155" stroke="#000" stroke-width="2.5"/>
+    <rect x="115" y="260" width="110" height="10" rx="4" fill="#475569" stroke="#000" stroke-width="2"/>
+  </g>
+</svg>
