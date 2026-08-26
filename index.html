@@ -1,212 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="BERKVERSE — Enter the creative universe of Berk Uzan">
-  <meta name="theme-color" content="#0B1426">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23F59E0B'/><text x='16' y='22' text-anchor='middle' font-size='14' fill='%230B1426'>B</text></svg>">
-  <title>BERKVERSE — Berk Uzan</title>
-  <style>html,body{background:#0B1426;margin:0}</style>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0407" />
 
-  <div class="intro" id="intro">
-    <div class="intro__stars"></div>
-    <div class="intro__content">
-      <p class="intro__eyebrow">Welcome to</p>
-      <h1 class="intro__title">BERKVERSE</h1>
-      <p class="intro__sub">A South Park-style playable portfolio</p>
-      <p class="intro__hint">Click objects on the desk · Explore the room · Meet Balım</p>
-      <button class="intro__btn" id="btn-enter" type="button">Enter the room</button>
-    </div>
-  </div>
+    <title>Berk Uzan — Software Developer &amp; Creative Technologist</title>
+    <meta
+      name="description"
+      content="Berk Uzan'ın kişisel portföyü, projeleri, blog yazıları ve CV'si. Yazılım, yapay zeka, oyun geliştirme ve yaratıcı teknoloji."
+    />
+    <meta name="author" content="Berk Uzan" />
 
-  <!-- Main canvas scene -->
-  <div class="scene-wrap" id="scene-wrap">
-    <canvas id="scene" aria-label="BERKVERSE interactive room"></canvas>
-  </div>
+    <link rel="icon" type="image/png" href="/images/koala/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/koala/favicon.png" />
 
-  <!-- HUD -->
-  <div class="hud">
-    <div class="hud__left">
-      <span class="hud__brand">BERKVERSE</span>
-      <span class="hud__score" id="hud-score">✦ 0</span>
-    </div>
-    <div class="hud__controls">
-      <button class="hud__btn" id="btn-audio" aria-label="Toggle audio">🔊</button>
-      <span class="hud__hint">Drag · Click desk objects · Explore room</span>
-    </div>
-  </div>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:site_name" content="Berk Uzan" />
+    <meta
+      property="og:title"
+      content="Berk Uzan — Software Developer &amp; Creative Technologist"
+    />
+    <meta
+      property="og:description"
+      content="Berk Uzan'ın kişisel portföyü, projeleri, blog yazıları ve CV'si. Yazılım, yapay zeka, oyun geliştirme ve yaratıcı teknoloji."
+    />
+    <meta property="og:image" content="/images/koala/hero-koala.png" />
 
-  <!-- Tooltip -->
-  <div class="tooltip" id="tooltip" hidden>
-    <span class="tooltip__label"></span>
-  </div>
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Berk Uzan — Software Developer &amp; Creative Technologist"
+    />
+    <meta
+      name="twitter:description"
+      content="Kod yazıyorum, tasarlıyorum, oyunlar yapıyorum ve bazen evreni fazla ciddiye almıyorum."
+    />
+    <meta name="twitter:image" content="/images/koala/hero-koala.png" />
 
-  <!-- Mobile joystick -->
-  <div class="joystick" id="joystick">
-    <div class="joystick__ring"><div class="joystick__knob" id="joystick-knob"></div></div>
-  </div>
-
-  <div class="toast" id="toast" hidden><span id="toast-text"></span></div>
-
-  <!-- Section panel -->
-  <div class="panel" id="panel" hidden>
-    <div class="panel__backdrop"></div>
-    <article class="panel__card">
-      <button class="panel__close" id="panel-close" aria-label="Close">&times;</button>
-      <header class="panel__head">
-        <span class="panel__icon" id="panel-icon"></span>
-        <div>
-          <p class="panel__tag" id="panel-tag"></p>
-          <h2 class="panel__title" id="panel-title"></h2>
-        </div>
-      </header>
-      <div class="panel__body" id="panel-body"></div>
-    </article>
-  </div>
-
-  <!-- Templates -->
-  <template id="tpl-about">
-    <div class="about">
-      <div class="about__photo">
-        <div class="about__avatar">BU</div>
-      </div>
-      <p class="lead">I'm Berk — a game developer and software engineer who builds worlds in code, engines, and imagination.</p>
-      <p>I craft interactive experiences with Unity, Flutter, and AI. Every project starts with a feeling — then systems, art, and code follow.</p>
-      <div class="timeline">
-        <div class="timeline__item"><span>2024</span><p>ML-Agent NPC systems & Unity AI experiments</p></div>
-        <div class="timeline__item"><span>2023</span><p>Flutter cross-platform apps & game prototypes</p></div>
-        <div class="timeline__item"><span>2022</span><p>Started building interactive portfolios & tools</p></div>
-        <div class="timeline__item"><span>∞</span><p>Always learning, always creating</p></div>
-      </div>
-      <div class="tags"><span>Unity</span><span>C#</span><span>Flutter</span><span>AI/ML</span><span>JavaScript</span></div>
-    </div>
-  </template>
-
-  <template id="tpl-projects">
-    <div class="cards">
-      <article class="card card--project">
-        <div class="card__img card__img--1"></div>
-        <div class="card__content">
-          <h3>Unity ML NPC System</h3>
-          <p>Machine learning-driven NPC behavior with adaptive dialogue and real-time decision trees.</p>
-          <div class="tags"><span>Unity</span><span>C#</span><span>ML-Agents</span></div>
-          <a href="https://github.com" class="btn" target="_blank" rel="noopener">View on GitHub</a>
-        </div>
-      </article>
-      <article class="card card--project">
-        <div class="card__img card__img--2"></div>
-        <div class="card__content">
-          <h3>AI Word Generator</h3>
-          <p>Language-model powered creative tool for writers and developers.</p>
-          <div class="tags"><span>AI</span><span>Python</span><span>Web</span></div>
-          <a href="https://github.com" class="btn" target="_blank" rel="noopener">View on GitHub</a>
-        </div>
-      </article>
-      <article class="card card--project">
-        <div class="card__img card__img--3"></div>
-        <div class="card__content">
-          <h3>Game Prototypes</h3>
-          <p>Rapid experiments in mechanics, feel, and emergent gameplay.</p>
-          <div class="tags"><span>Unity</span><span>Game Dev</span></div>
-          <a href="https://github.com" class="btn" target="_blank" rel="noopener">View on GitHub</a>
-        </div>
-      </article>
-    </div>
-  </template>
-
-  <template id="tpl-skills">
-    <div class="skills">
-      <p class="lead">Experience stacked like books on the desk — each spine a chapter of the journey.</p>
-      <div class="cards">
-        <article class="card"><small>CLEAN CODE</small><h3>Software Engineering</h3><p>Architecture, patterns, testing, and maintainable systems across web, mobile, and game engines.</p><div class="tags"><span>C#</span><span>TypeScript</span><span>Python</span><span>Dart</span></div></article>
-        <article class="card"><small>DESIGN PATTERNS</small><h3>System Design</h3><p>Scalable app architecture, clean separation of concerns, and production-grade code organization.</p><div class="tags"><span>Flutter</span><span>Unity</span><span>Node.js</span></div></article>
-        <article class="card"><small>GAME PROGRAMMING</small><h3>Game Development</h3><p>Mechanics, AI, physics, and player feel — from prototype to polished experience.</p><div class="tags"><span>Unity</span><span>ML-Agents</span><span>C#</span></div></article>
-      </div>
-      <div class="timeline">
-        <div class="timeline__item"><span>2024</span><p>ML-Agent NPC systems & Unity AI experiments</p></div>
-        <div class="timeline__item"><span>2023</span><p>Flutter cross-platform apps & game prototypes</p></div>
-        <div class="timeline__item"><span>2022</span><p>Interactive portfolios & creative coding tools</p></div>
-      </div>
-    </div>
-  </template>
-
-  <template id="tpl-technologies">
-    <div class="tech">
-      <p class="lead">The tools on the laptop stickers — and the languages running on the monitor.</p>
-      <div class="tags tags--large">
-        <span>TypeScript</span><span>JavaScript</span><span>Python</span><span>React</span><span>Node.js</span><span>C#</span><span>Unity</span><span>Flutter</span><span>Dart</span><span>Git</span><span>AI/ML</span><span>HTML/CSS</span>
-      </div>
-      <div class="cards">
-        <article class="card"><h3>🖥️ Frontend & Web</h3><p>Interactive experiences, canvas games, and modern web architecture.</p><div class="tags"><span>React</span><span>TS</span><span>Canvas</span></div></article>
-        <article class="card"><h3>🎮 Game Engine</h3><p>Unity development, ML-Agents, physics systems, and gameplay programming.</p><div class="tags"><span>Unity</span><span>C#</span><span>ML-Agents</span></div></article>
-        <article class="card"><h3>📱 Mobile</h3><p>Cross-platform Flutter apps with clean architecture and fluid UX.</p><div class="tags"><span>Flutter</span><span>Dart</span><span>Firebase</span></div></article>
-      </div>
-    </div>
-  </template>
-
-  <template id="tpl-experiments">
-    <div class="lab">
-      <p class="lead">The desk lamp illuminates the lab — where wild ideas become playable prototypes.</p>
-      <div class="cards">
-        <article class="card"><h3>🤖 ML-Agent NPC Demo</h3><p>Adaptive AI behavior trained with Unity ML-Agents. NPCs learn, react, and evolve.</p><div class="tags"><span>Unity</span><span>ML-Agents</span><span>Python</span></div></article>
-        <article class="card"><h3>⚡ Physics Puzzle Lab</h3><p>Mechanic exploration sandbox for game-feel tuning and emergent solutions.</p><div class="tags"><span>Unity</span><span>C#</span></div></article>
-        <article class="card"><h3>📖 Narrative Sandbox</h3><p>Procedural dialogue systems and branching story experiments.</p><div class="tags"><span>Unity</span><span>AI</span></div></article>
-        <article class="card"><h3>🧠 AI Integration Tests</h3><p>Connecting LLMs to game systems for dynamic content generation.</p><div class="tags"><span>AI</span><span>C#</span></div></article>
-      </div>
-    </div>
-  </template>
-
-  <template id="tpl-balim">
-    <div class="balim">
-      <div class="balim__hero">🐱</div>
-      <p class="lead">This is Balım — the black cat who sleeps on the Clean Code stack and supervises every commit.</p>
-      <div class="cards">
-        <article class="card"><h3>Chief Nap Officer</h3><p>Balım believes the best code is written after a 4-hour nap on the warmest keyboard.</p></article>
-        <article class="card"><h3>Bug Hunter</h3><p>Has never caught a bug, but excels at walking across the keyboard at critical moments.</p></article>
-        <article class="card"><h3>Photo Gallery</h3><p>Sleeping on books · Staring at monitors · Demanding treats at 3 AM · Winning every sunbeam.</p></article>
-        <article class="card"><h3>Fun Facts</h3><p>Black cat · Professional sunbeam locator · Speaks fluent meow · Loves boxes and warm laptops</p></article>
-      </div>
-    </div>
-  </template>
-
-  <template id="tpl-blog">
-    <div class="cards">
-      <article class="card"><small>8 min read</small><h3>Building Intelligent NPC Systems in Unity</h3><p>How ML-Agents transforms static characters into living, responsive entities.</p></article>
-      <article class="card"><small>6 min read</small><h3>Flutter Architecture for Scale</h3><p>Patterns for maintainable cross-platform apps that feel native everywhere.</p></article>
-      <article class="card"><small>5 min read</small><h3>Cinema, Rap & Code</h3><p>What storytelling in other mediums teaches us about software design.</p></article>
-      <article class="card"><small>4 min read</small><h3>Why Portfolios Should Be Playable</h3><p>The case for interactive self-expression on the web.</p></article>
-    </div>
-  </template>
-
-  <template id="tpl-career">
-    <div class="solar">
-      <p class="lead">A journey through code, games, and creative technology.</p>
-      <div class="solar__system">
-        <div class="planet-item" data-year="2024"><div class="planet-item__orb planet-item__orb--1"></div><div><strong>2024 — AI & Games</strong><p>ML-Agent NPC systems, Unity AI integration</p></div></div>
-        <div class="planet-item" data-year="2023"><div class="planet-item__orb planet-item__orb--2"></div><div><strong>2023 — Mobile & Web</strong><p>Flutter apps, interactive web experiences</p></div></div>
-        <div class="planet-item" data-year="2022"><div class="planet-item__orb planet-item__orb--3"></div><div><strong>2022 — Game Dev Focus</strong><p>Unity prototypes, game mechanics research</p></div></div>
-        <div class="planet-item" data-year="2021"><div class="planet-item__orb planet-item__orb--4"></div><div><strong>2021 — Foundations</strong><p>Computer science, first game projects</p></div></div>
-      </div>
-    </div>
-  </template>
-
-  <template id="tpl-contact">
-    <div class="contact">
-      <p class="lead">Let's build something extraordinary together.</p>
-      <a href="mailto:hello@berkuzan.dev" class="contact__link"><span>Email</span>hello@berkuzan.dev</a>
-      <a href="https://github.com" class="contact__link" target="_blank" rel="noopener"><span>GitHub</span>@berkuzan</a>
-      <a href="https://linkedin.com" class="contact__link" target="_blank" rel="noopener"><span>LinkedIn</span>Berk Uzan</a>
-      <a href="https://twitter.com" class="contact__link" target="_blank" rel="noopener"><span>Twitter / X</span>@berkuzan</a>
-    </div>
-  </template>
-
-  <script src="js/camera.js"></script>
-  <script src="js/world.js"></script>
-  <script src="js/ui.js"></script>
-  <script src="js/main.js"></script>
-</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Caveat:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/assets/index-B64ELjfD.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Ccv_tS8m.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
