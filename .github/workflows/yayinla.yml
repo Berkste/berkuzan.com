@@ -1,0 +1,48 @@
+# source dalına her push'ta siteyi build alır ve çıktıyı main dalına yazar.
+# GitHub Pages main dalından yayın yaptığı için Pages ayarı değişmez.
+name: Yayınla
+
+on:
+  push:
+    branches: [source]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: yayinla
+  cancel-in-progress: false
+
+jobs:
+  yayinla:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Build çıktısını main dalına yaz
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git clone --depth 1 --branch main "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" yayin
+          # Eski paketleri kaldır; yenileri dist'ten gelecek. CNAME ve diğer dosyalar yerinde kalır.
+          rm -f yayin/assets/index-*
+          cp -r dist/. yayin/
+          cd yayin
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Yayında değişiklik yok."
+            exit 0
+          fi
+          git commit -m "Yayın: source ${GITHUB_SHA::7}"
+          git push origin main

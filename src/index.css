@@ -1,0 +1,1155 @@
+@import './fonts.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ---- Surfaces ---- */
+    --bg-primary: #0a0407;
+    --bg-secondary: #12060c;
+    --bg-card: #180810;
+    --bg-elevated: #210c16;
+
+    /* ---- Brand ---- */
+    --burgundy-deep: #350a1a;
+    --burgundy: #7a1230;
+    --burgundy-bright: #b81c46;
+    --accent: #ff3d68;
+    --accent-soft: #ff7a95;
+    --accent-warm: #ff8a4c;
+
+    /* ---- Type ---- */
+    --text-primary: #f6e9ec;
+    --text-secondary: #c9a6b0;
+    --text-muted: #8c6672;
+
+    /* ---- Lines ---- */
+    --border: rgba(180, 60, 95, 0.18);
+    --border-strong: rgba(224, 50, 92, 0.42);
+
+    /* ---- Rhythm ---- */
+    --section-gap: clamp(3.5rem, 7vw, 6.5rem);
+    --shell: 1280px;
+
+    /*
+     * ---- Theme hooks ----
+     * These carry the values that used to be hard-coded further down the file.
+     * Seeding them here with the original numbers keeps `burgundy` and `amber`
+     * pixel-identical while letting new themes restyle the same primitives.
+     */
+    --font-display: 'Space Grotesk';
+    --glow-rgb: 255, 61, 104;
+    --panel-radius: 22px;
+    --panel-tint: rgba(255, 90, 130, 0.05);
+    --panel-from: rgba(38, 12, 22, 0.92);
+    --panel-to: rgba(16, 6, 11, 0.94);
+    --panel-texture: none;
+    --inset-radius: 14px;
+    --inset-from: rgba(46, 15, 27, 0.7);
+    --inset-to: rgba(20, 7, 13, 0.7);
+    --hero-wash:
+      radial-gradient(48% 46% at 52% 34%, rgba(190, 40, 80, 0.34), transparent 70%),
+      radial-gradient(38% 40% at 78% 22%, rgba(120, 30, 110, 0.28), transparent 72%);
+    --contact-wash:
+      linear-gradient(
+        180deg,
+        rgba(24, 8, 15, 0.2),
+        rgba(46, 10, 22, 0.75) 45%,
+        rgba(88, 20, 26, 0.55)
+      ),
+      radial-gradient(70% 120% at 50% 118%, rgba(255, 110, 60, 0.42), transparent 62%);
+    --atmos:
+      radial-gradient(70% 55% at 12% -6%, rgba(140, 22, 55, 0.5), transparent 62%),
+      radial-gradient(58% 48% at 88% 2%, rgba(88, 18, 72, 0.42), transparent 64%),
+      radial-gradient(85% 70% at 50% 45%, rgba(60, 10, 30, 0.34), transparent 70%),
+      radial-gradient(70% 55% at 50% 105%, rgba(176, 52, 30, 0.3), transparent 66%);
+
+    color-scheme: dark;
+  }
+
+  /* Warm "amber terminal" alternate theme, toggled from the navbar. */
+  :root[data-theme='amber'] {
+    --bg-primary: #08060a;
+    --bg-secondary: #120b08;
+    --bg-card: #190f0a;
+    --bg-elevated: #23150d;
+    --burgundy-deep: #3a1b06;
+    --burgundy: #7d3c10;
+    --burgundy-bright: #c05a15;
+    --accent: #ff9d3d;
+    --accent-soft: #ffc48a;
+    --accent-warm: #ff6a3d;
+    --text-primary: #f8eee2;
+    --text-secondary: #ceb096;
+    --text-muted: #8f745c;
+    --border: rgba(200, 120, 50, 0.2);
+    --border-strong: rgba(255, 157, 61, 0.42);
+  }
+
+  /*
+   * ---------------------------------------------------------------------
+   * Universe 1 — Neon Dark Sci-Fi
+   * Burgundy and black stay dominant; electric cyan appears only in the
+   * grid lines and the HUD, never as a surface or a text colour.
+   * ---------------------------------------------------------------------
+   */
+  :root[data-theme='neon-sci-fi'] {
+    --bg-primary: #050508;
+    --bg-secondary: #09070d;
+    --bg-card: #100912;
+    --bg-elevated: #180b1b;
+
+    --burgundy-deep: #2c0616;
+    --burgundy: #8a0f3c;
+    --burgundy-bright: #d4155a;
+    --accent: #ff2d6f;
+    --accent-soft: #ff8ab1;
+    --accent-warm: #ff7a2f;
+
+    --text-primary: #f4ecf3;
+    --text-secondary: #c2a8bd;
+    /* Nudged lighter than the original themes' muted tone so the smallest
+       labels clear 4.5:1 on the darker sci-fi ground. */
+    --text-muted: #8f7389;
+
+    --border: rgba(255, 45, 111, 0.18);
+    --border-strong: rgba(255, 45, 111, 0.52);
+
+    --font-display: 'Oxanium';
+    --glow-rgb: 255, 45, 111;
+    --cyan: #35e6ff;
+
+    --panel-radius: 13px;
+    --panel-tint: rgba(255, 45, 111, 0.07);
+    --panel-from: rgba(22, 9, 25, 0.9);
+    --panel-to: rgba(7, 5, 11, 0.95);
+    --panel-texture: none;
+    --inset-radius: 9px;
+    --inset-from: rgba(32, 11, 30, 0.72);
+    --inset-to: rgba(10, 6, 14, 0.78);
+
+    --hero-wash:
+      radial-gradient(48% 46% at 52% 34%, rgba(212, 21, 90, 0.38), transparent 70%),
+      radial-gradient(38% 40% at 78% 22%, rgba(126, 18, 138, 0.3), transparent 72%);
+    --contact-wash:
+      linear-gradient(
+        180deg,
+        rgba(6, 4, 10, 0.35),
+        rgba(34, 6, 24, 0.8) 45%,
+        rgba(96, 12, 52, 0.6)
+      ),
+      radial-gradient(70% 120% at 50% 118%, rgba(255, 45, 111, 0.42), transparent 62%);
+    --atmos:
+      radial-gradient(64% 50% at 8% -8%, rgba(190, 16, 78, 0.42), transparent 62%),
+      radial-gradient(56% 46% at 92% 0%, rgba(110, 14, 130, 0.36), transparent 66%),
+      radial-gradient(90% 62% at 50% 108%, rgba(255, 90, 40, 0.22), transparent 68%);
+  }
+
+  /*
+   * ---------------------------------------------------------------------
+   * Universe 2 — Wizarding
+   * Candlelight, antique gold and old burgundy. `--accent` becomes gold, so
+   * every existing accent-coloured detail re-reads as brass without a single
+   * component change.
+   * ---------------------------------------------------------------------
+   */
+  :root[data-theme='wizarding'] {
+    --bg-primary: #0a0808;
+    --bg-secondary: #15100d;
+    --bg-card: #1b120e;
+    --bg-elevated: #24130f;
+
+    --burgundy-deep: #4a0f1b;
+    --burgundy: #6b1528;
+    --burgundy-bright: #8a1f38;
+    --accent: #c9a227;
+    --accent-soft: #e4c766;
+    --accent-warm: #e0863a;
+
+    --text-primary: #ecdcb8;
+    --text-secondary: #c3ab84;
+    --text-muted: #93805f;
+
+    --border: rgba(201, 162, 39, 0.24);
+    --border-strong: rgba(228, 199, 102, 0.52);
+
+    --font-display: 'Cinzel';
+    --glow-rgb: 201, 162, 39;
+    --forest: #173d2d;
+    --parchment: #d8c39a;
+
+    --panel-radius: 9px;
+    --panel-tint: rgba(201, 162, 39, 0.05);
+    --panel-from: rgba(38, 24, 17, 0.94);
+    --panel-to: rgba(18, 12, 9, 0.96);
+    /* Faint parchment tooth, layered under the panel gradients. */
+    --panel-texture:
+      radial-gradient(1px 1px at 12% 22%, rgba(216, 195, 154, 0.05), transparent 100%),
+      radial-gradient(1px 1px at 68% 44%, rgba(216, 195, 154, 0.045), transparent 100%),
+      radial-gradient(1px 1px at 34% 78%, rgba(216, 195, 154, 0.04), transparent 100%),
+      radial-gradient(1.2px 1.2px at 86% 68%, rgba(216, 195, 154, 0.04), transparent 100%);
+    --inset-radius: 6px;
+    --inset-from: rgba(56, 34, 20, 0.6);
+    --inset-to: rgba(22, 15, 10, 0.72);
+
+    --hero-wash:
+      radial-gradient(48% 46% at 52% 34%, rgba(224, 150, 60, 0.22), transparent 70%),
+      radial-gradient(38% 40% at 78% 22%, rgba(107, 21, 40, 0.3), transparent 72%);
+    --contact-wash:
+      linear-gradient(
+        180deg,
+        rgba(10, 8, 8, 0.3),
+        rgba(36, 19, 15, 0.82) 45%,
+        rgba(74, 40, 14, 0.6)
+      ),
+      radial-gradient(70% 120% at 50% 118%, rgba(224, 150, 60, 0.36), transparent 62%);
+    --atmos:
+      radial-gradient(58% 44% at 50% -6%, rgba(224, 150, 60, 0.2), transparent 66%),
+      radial-gradient(46% 40% at 10% 24%, rgba(107, 21, 40, 0.38), transparent 70%),
+      radial-gradient(42% 38% at 90% 34%, rgba(23, 61, 45, 0.32), transparent 72%),
+      radial-gradient(80% 50% at 50% 104%, rgba(201, 162, 39, 0.18), transparent 70%);
+  }
+
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* keep anchored sections clear of the sticky navbar */
+    scroll-padding-top: 6.5rem;
+  }
+
+  body {
+    @apply bg-bg-primary font-sans text-ink-primary antialiased;
+    overflow-x: hidden;
+  }
+
+  /*
+   * Atmosphere lives on one fixed, non-scrolling layer instead of
+   * `background-attachment: fixed`, which forces a full repaint on every
+   * scroll frame with gradients this large.
+   */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: var(--atmos);
+  }
+
+  /* Faint starfield / scanline texture over the whole page. */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    background-image:
+      radial-gradient(1px 1px at 12% 18%, rgba(255, 220, 230, 0.55), transparent 100%),
+      radial-gradient(1px 1px at 78% 9%, rgba(255, 200, 215, 0.4), transparent 100%),
+      radial-gradient(1.4px 1.4px at 33% 62%, rgba(255, 235, 240, 0.32), transparent 100%),
+      radial-gradient(1px 1px at 62% 78%, rgba(255, 190, 210, 0.35), transparent 100%),
+      radial-gradient(1px 1px at 91% 47%, rgba(255, 220, 230, 0.3), transparent 100%),
+      radial-gradient(1px 1px at 22% 88%, rgba(255, 220, 230, 0.28), transparent 100%),
+      repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.014) 0px,
+        rgba(255, 255, 255, 0.014) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+  }
+
+  #root {
+    position: relative;
+    z-index: 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: #150109;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--burgundy), var(--burgundy-deep));
+    border-radius: 999px;
+    border: 2px solid var(--bg-primary);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(var(--burgundy-bright), var(--burgundy));
+  }
+}
+
+@layer components {
+  .shell {
+    width: 100%;
+    max-width: var(--shell);
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 2.5rem);
+  }
+
+  /* Base card surface used across the whole site. */
+  .panel {
+    position: relative;
+    border-radius: var(--panel-radius, 22px);
+    border: 1px solid var(--border);
+    background:
+      var(--panel-texture, none), linear-gradient(150deg, var(--panel-tint), transparent 42%),
+      linear-gradient(180deg, var(--panel-from), var(--panel-to));
+    backdrop-filter: blur(14px);
+    box-shadow: theme('boxShadow.card');
+  }
+
+  .panel-inset {
+    border-radius: var(--inset-radius, 14px);
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, var(--inset-from), var(--inset-to));
+  }
+
+  /* Thin neon hairline that runs along the top edge of major panels. */
+  .neon-edge::after {
+    content: '';
+    position: absolute;
+    inset-inline: 12%;
+    top: -1px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0.55;
+    pointer-events: none;
+  }
+
+  .hair-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 28px rgba(var(--glow-rgb), 0.45);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Skip link for keyboard users */
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -6rem;
+    z-index: 100;
+    padding: 0.65rem 1.1rem;
+    border-radius: 10px;
+    background: var(--accent);
+    color: #16030a;
+    font-weight: 600;
+    transition: top 0.2s ease;
+  }
+  .skip-link:focus {
+    top: 1rem;
+  }
+}
+
+/* =====================================================================
+ * THEME SCENERY + SKINS
+ *
+ * Everything below is intentionally *unlayered*. Tailwind's `utilities`
+ * layer wins over `components` regardless of specificity, so a theme skin
+ * that needs to override a utility (a radius, a filter, a border colour)
+ * has to sit outside the layers to take effect. Unlayered rules always
+ * beat layered ones in the cascade, which is exactly the escape hatch a
+ * theme skin needs — and it stays scoped to `[data-theme='...']`, so the
+ * two original themes are untouched.
+ * ===================================================================== */
+
+/* ---------------------------------------------------------- scenery shell */
+
+.atmos {
+  position: fixed;
+  inset: 0;
+  z-index: -20; /* the deepest layer inside #root */
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+}
+
+/* --------------------------------------------------- sci-fi: light beams */
+
+.atmos-beams {
+  position: absolute;
+  inset: 0;
+}
+
+.atmos-beam {
+  position: absolute;
+  left: 0;
+  height: 1px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--glow-rgb), 0.05) 20%,
+    rgba(var(--glow-rgb), 0.85) 62%,
+    rgba(255, 235, 245, 0.95) 84%,
+    transparent
+  );
+  box-shadow: 0 0 12px 1px rgba(var(--glow-rgb), 0.55);
+  transform: translate3d(-60vw, 0, 0);
+  will-change: transform;
+  animation-name: atmos-beam;
+  animation-timing-function: cubic-bezier(0.55, 0, 0.35, 1);
+  animation-iteration-count: infinite;
+}
+
+/*
+ * The pass itself takes ~14% of the cycle, so a 20s cycle reads as a fast
+ * ~2.8s streak followed by a long quiet gap. That is what keeps six beams
+ * from turning into an arcade game.
+ */
+@keyframes atmos-beam {
+  0% {
+    transform: translate3d(-60vw, 0, 0);
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  12% {
+    opacity: 1;
+  }
+  14% {
+    transform: translate3d(170vw, 0, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(170vw, 0, 0);
+    opacity: 0;
+  }
+}
+
+/* ---------------------------------------------------- sci-fi: floor grid */
+
+/* A flat plane tipped away from the viewer. The perspective distance has to
+   stay large (1100px) or the whole plane collapses into a ~70px sliver. */
+.atmos-grid {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 100vh;
+  opacity: 0.9;
+  transform: perspective(1100px) rotateX(74deg);
+  transform-origin: bottom center;
+  background-image:
+    repeating-linear-gradient(to right, rgba(var(--glow-rgb), 0.3) 0 1px, transparent 1px 96px),
+    repeating-linear-gradient(to bottom, rgba(53, 230, 255, 0.2) 0 1px, transparent 1px 96px);
+  -webkit-mask-image: linear-gradient(to top, #000, transparent 82%);
+  mask-image: linear-gradient(to top, #000, transparent 82%);
+  animation: atmos-grid-run 6s linear infinite;
+}
+
+@keyframes atmos-grid-run {
+  to {
+    background-position:
+      0 0,
+      0 96px;
+  }
+}
+
+/* ------------------------------------------------- sci-fi: drifting neon */
+
+.atmos-nebula {
+  position: absolute;
+  inset: -25%;
+  background:
+    radial-gradient(34% 30% at 24% 24%, rgba(212, 21, 90, 0.3), transparent 68%),
+    radial-gradient(30% 28% at 78% 16%, rgba(126, 18, 138, 0.26), transparent 70%),
+    radial-gradient(40% 34% at 60% 78%, rgba(255, 122, 47, 0.16), transparent 72%);
+  animation: atmos-nebula 38s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes atmos-nebula {
+  from {
+    transform: translate3d(-2%, -1%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(3%, 2%, 0) scale(1.12);
+  }
+}
+
+/* ------------------------------------------- sci-fi: scanlines + hologram */
+
+.atmos-scan {
+  position: absolute;
+  inset: 0;
+  opacity: 0.55;
+  background-image:
+    repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px 3px),
+    linear-gradient(to bottom, transparent 0%, rgba(53, 230, 255, 0.045) 48%, transparent 52%);
+  background-size:
+    100% 3px,
+    100% 260%;
+  animation: atmos-holo 11s linear infinite;
+}
+
+@keyframes atmos-holo {
+  from {
+    background-position:
+      0 0,
+      0 -160%;
+  }
+  to {
+    background-position:
+      0 0,
+      0 160%;
+  }
+}
+
+/* -------------------------------------------------- wizarding: scenery */
+
+.atmos-candle {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(30% 26% at 50% 4%, rgba(255, 176, 84, 0.2), transparent 70%),
+    radial-gradient(22% 30% at 6% 42%, rgba(255, 156, 62, 0.14), transparent 72%),
+    radial-gradient(22% 30% at 94% 56%, rgba(255, 156, 62, 0.12), transparent 72%);
+  animation: atmos-flicker 5.5s ease-in-out infinite;
+}
+
+/* A candle never sits still; two nudges per cycle read as a real flame. */
+@keyframes atmos-flicker {
+  0%,
+  100% {
+    opacity: 0.86;
+  }
+  18% {
+    opacity: 1;
+  }
+  34% {
+    opacity: 0.78;
+  }
+  58% {
+    opacity: 0.96;
+  }
+  74% {
+    opacity: 0.82;
+  }
+}
+
+.atmos-mist {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(38% 26% at 28% 62%, rgba(120, 90, 60, 0.14), transparent 72%),
+    radial-gradient(34% 22% at 72% 40%, rgba(60, 90, 74, 0.12), transparent 74%);
+  animation: atmos-mist 44s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes atmos-mist {
+  from {
+    transform: translate3d(-3%, 1%, 0);
+  }
+  to {
+    transform: translate3d(4%, -2%, 0);
+  }
+}
+
+.atmos-castle {
+  position: absolute;
+  inset: auto 0 0 0;
+  width: 100%;
+  height: clamp(130px, 19vh, 220px);
+  opacity: 0.88;
+  color: rgba(9, 6, 5, 0.94);
+  filter: drop-shadow(0 -14px 26px rgba(201, 162, 39, 0.16));
+}
+
+.atmos-castle-windows rect {
+  fill: rgba(255, 190, 96, 0.8);
+  animation: castle-window 6s ease-in-out infinite;
+}
+
+@keyframes castle-window {
+  0%,
+  100% {
+    opacity: 0.75;
+  }
+  40% {
+    opacity: 0.3;
+  }
+  62% {
+    opacity: 0.95;
+  }
+}
+
+/* -------------------------------------------- wizarding: dust and sparks */
+
+.atmos-motes {
+  position: absolute;
+  inset: 0;
+}
+
+.atmos-mote {
+  position: absolute;
+  bottom: -6vh;
+  border-radius: 999px;
+  background: rgba(226, 205, 160, 0.55);
+  box-shadow: 0 0 6px 1px rgba(226, 205, 160, 0.32);
+  animation-name: atmos-mote;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+}
+
+/* Every sixth mote is a brighter gold ember rather than plain dust. */
+.atmos-mote--spark {
+  background: rgba(255, 214, 122, 0.95);
+  box-shadow:
+    0 0 8px 2px rgba(255, 196, 88, 0.6),
+    0 0 18px 5px rgba(224, 150, 60, 0.28);
+}
+
+@keyframes atmos-mote {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(var(--drift, 0), -112vh, 0);
+    opacity: 0;
+  }
+}
+
+/* ------------------------------------------------------- sci-fi HUD strip */
+
+.system-hud {
+  position: fixed;
+  left: clamp(1rem, 4vw, 2.5rem);
+  bottom: 1.1rem;
+  z-index: 30;
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: rgba(5, 5, 8, 0.72);
+  backdrop-filter: blur(8px);
+  font-family: theme('fontFamily.mono');
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  .system-hud {
+    display: flex;
+  }
+}
+
+.system-hud-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--cyan, #35e6ff);
+  box-shadow: 0 0 8px 1px rgba(53, 230, 255, 0.8);
+  animation: hud-pulse 2.4s ease-in-out infinite;
+}
+
+.system-hud-sep {
+  color: rgba(var(--glow-rgb), 0.55);
+}
+
+@keyframes hud-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+/* --------------------------------------------------------- wand trail */
+
+.wand-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 95;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* ------------------------------------------------- theme swap overlay */
+
+/* .theme-swap {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+}
+
+.theme-swap-veil {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.theme-swap-veil--dark {
+  background: radial-gradient(
+    60% 60% at 50% 50%,
+    rgba(4, 3, 6, 0.9),
+    rgba(2, 1, 3, 1)
+  );
+}
+
+.theme-swap-veil--gold {
+  background: radial-gradient(
+    55% 55% at 50% 50%,
+    rgba(201, 162, 39, 0.5),
+    rgba(10, 8, 8, 0.9)
+  );
+}
+
+.theme-swap-ring {
+  position: absolute;
+  width: min(62vw, 62vh);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  border: 2px solid rgba(228, 199, 102, 0.9);
+  box-shadow:
+    0 0 24px 3px rgba(201, 162, 39, 0.4);
+  will-change: transform, opacity;
+}
+
+.theme-swap-ring--inner {
+  width: min(38vw, 38vh);
+  border-style: dashed;
+  border-color: rgba(228, 199, 102, 0.6);
+  box-shadow: none;
+}
+
+.theme-swap-spark {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(255, 224, 150, 1);
+  box-shadow: 0 0 8px 2px rgba(224, 178, 70, 0.65);
+  will-change: transform, opacity;
+}
+
+.theme-swap-sweep {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 18vh;
+
+  background: rgba(255, 255, 255, 0.38);
+
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  isolation: isolate;
+  pointer-events: none;
+}
+
+.theme-swap-sweep::before,
+.theme-swap-sweep::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.theme-swap-sweep::before {
+  top: 0;
+  height: 48%;
+  background: rgba(255, 45, 111, 0.24);
+}
+
+.theme-swap-sweep::after {
+  bottom: 0;
+  height: 48%;
+  background: rgba(53, 230, 255, 0.20);
+}
+
+.theme-swap-boot {
+  position: relative;
+  font-family: 'Oxanium', theme('fontFamily.mono');
+  font-size: clamp(0.9rem, 2.6vw, 1.5rem);
+  font-weight: 700;
+  color: #ff8ab1;
+  text-shadow: 0 0 14px rgba(255, 45, 111, 0.75);
+  will-change: opacity;
+} */
+
+ .theme-swap {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  pointer-events: none; /* never blocks interaction mid-swap */
+}
+
+.theme-swap-veil {
+  position: absolute;
+  inset: 0;
+}
+.theme-swap-veil--dark {
+  background: radial-gradient(60% 60% at 50% 50%, rgba(4, 3, 6, 0.9), rgba(2, 1, 3, 1));
+}
+.theme-swap-veil--gold {
+  background: radial-gradient(55% 55% at 50% 50%, rgba(201, 162, 39, 0.5), rgba(10, 8, 8, 0.9));
+}
+
+.theme-swap-ring {
+  position: absolute;
+  width: min(62vw, 62vh);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  border: 2px solid rgba(228, 199, 102, 0.9);
+  box-shadow:
+    0 0 40px 6px rgba(201, 162, 39, 0.5),
+    inset 0 0 60px 10px rgba(201, 162, 39, 0.28);
+}
+.theme-swap-ring--inner {
+  width: min(38vw, 38vh);
+  border-style: dashed;
+  border-color: rgba(228, 199, 102, 0.6);
+}
+
+.theme-swap-spark {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 224, 150, 1);
+  box-shadow: 0 0 14px 4px rgba(224, 178, 70, 0.75);
+}
+
+.theme-swap-sweep {
+  position: absolute;
+  inset-inline: 0;
+  height: 26vh;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 45, 111, 0.28) 44%,
+    rgba(255, 255, 255, 0.55) 50%,
+    rgba(53, 230, 255, 0.24) 56%,
+    transparent
+  );
+}
+
+.theme-swap-boot {
+  position: relative;
+  font-family: 'Oxanium', theme('fontFamily.mono');
+  font-size: clamp(0.9rem, 2.6vw, 1.5rem);
+  font-weight: 700;
+  color: #ff8ab1;
+  text-shadow: 0 0 24px rgba(255, 45, 111, 0.9);
+}
+
+/* =====================================================================
+ * SKIN: Neon Dark Sci-Fi
+ * ===================================================================== */
+
+[data-theme='neon-sci-fi'] h1,
+[data-theme='neon-sci-fi'] h2,
+[data-theme='neon-sci-fi'] h3 {
+  letter-spacing: 0.005em;
+}
+
+/* Panels get a technical corner cut and a brighter live edge. */
+[data-theme='neon-sci-fi'] .panel {
+  border-color: rgba(255, 45, 111, 0.24);
+  box-shadow:
+    0 24px 60px -34px rgba(0, 0, 0, 0.95),
+    inset 0 1px 0 rgba(255, 138, 177, 0.08),
+    0 0 0 1px rgba(53, 230, 255, 0.04);
+}
+
+/* Light sweep on hover. Animating background-position instead of a
+   transform keeps the highlight inside the rounded box without forcing
+   `overflow: hidden` onto every card. */
+[data-theme='neon-sci-fi'] .panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background-image: linear-gradient(
+    104deg,
+    transparent 42%,
+    rgba(255, 255, 255, 0.1) 49%,
+    rgba(255, 45, 111, 0.2) 52%,
+    transparent 60%
+  );
+  background-size: 280% 100%;
+  background-position: 135% 0;
+  transition:
+    background-position 2.5s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 1s ease;
+}
+
+[data-theme='neon-sci-fi'] .panel:hover::before {
+  opacity: 1;
+  background-position: -35% 0;
+}
+
+[data-theme='neon-sci-fi'] .panel:hover {
+  border-color: rgba(255, 45, 111, 0.55);
+  box-shadow:
+    0 26px 70px -30px rgba(0, 0, 0, 0.95),
+    0 0 28px -6px rgba(255, 45, 111, 0.4),
+    inset 0 1px 0 rgba(255, 138, 177, 0.14);
+}
+
+[data-theme='neon-sci-fi'] .neon-edge::after {
+  inset-inline: 6%;
+  height: 2px;
+  opacity: 0.85;
+  box-shadow: 0 0 12px 1px rgba(255, 45, 111, 0.7);
+}
+
+[data-theme='neon-sci-fi'] .btn {
+  border-radius: 8px;
+}
+[data-theme='neon-sci-fi'] .btn.btn-icon {
+  border-radius: 8px;
+}
+[data-theme='neon-sci-fi'] .btn:hover {
+  box-shadow:
+    0 0 0 1px rgba(255, 45, 111, 0.55),
+    0 0 22px -4px rgba(255, 45, 111, 0.75);
+}
+
+/* Active nav item: neon underline with a live pulse. */
+[data-theme='neon-sci-fi'] .nav-pill {
+  border-radius: 6px;
+  border-color: rgba(255, 45, 111, 0.5);
+  background: linear-gradient(180deg, rgba(255, 45, 111, 0.06), rgba(255, 45, 111, 0.16));
+  box-shadow:
+    inset 0 -2px 0 var(--accent),
+    0 0 18px -6px rgba(255, 45, 111, 0.8);
+  animation: hud-pulse 3.2s ease-in-out infinite;
+}
+
+/* Artwork picks up a little bloom and saturation. */
+[data-theme='neon-sci-fi'] main img {
+  filter: saturate(1.16) contrast(1.05);
+}
+[data-theme='neon-sci-fi'] #top img {
+  filter: saturate(1.2) contrast(1.06) drop-shadow(0 24px 50px rgba(0, 0, 0, 0.7))
+    drop-shadow(0 0 26px rgba(255, 45, 111, 0.28));
+}
+
+[data-theme='neon-sci-fi'] ::selection {
+  background: var(--accent);
+  color: #10010a;
+}
+
+/* The HUD is pinned to the viewport, so at the very bottom of the page it would
+   sit on top of the footer credits. Give the footer room to clear it. */
+@media (min-width: 1024px) {
+  [data-theme='neon-sci-fi'] footer > div {
+    padding-bottom: 3.25rem;
+  }
+}
+
+/* =====================================================================
+ * SKIN: Wizarding
+ * ===================================================================== */
+
+[data-theme='wizarding'] h1,
+[data-theme='wizarding'] h2,
+[data-theme='wizarding'] h3 {
+  letter-spacing: 0.012em;
+}
+
+/* Cinzel is all-caps and much wider per character than Space Grotesk, so the
+   hero headline needs its own scale to stay on two lines. */
+[data-theme='wizarding'] #top h1 {
+  font-size: clamp(2.2rem, 3.9vw, 3.4rem);
+}
+
+/* Cards read as tooled leather book plates: warm ground, gold rule inset
+   a few pixels from the edge, deep inner shadow. */
+[data-theme='wizarding'] .panel {
+  border-color: rgba(201, 162, 39, 0.3);
+  box-shadow:
+    0 26px 60px -34px rgba(0, 0, 0, 0.98),
+    inset 0 1px 0 rgba(228, 199, 102, 0.12),
+    inset 0 0 46px rgba(74, 40, 14, 0.3);
+}
+
+[data-theme='wizarding'] .panel::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border-radius: calc(var(--panel-radius) - 3px);
+  border: 1px solid rgba(201, 162, 39, 0.16);
+  pointer-events: none;
+  transition: border-color 0.35s ease;
+}
+
+[data-theme='wizarding'] .panel:hover::before {
+  border-color: rgba(228, 199, 102, 0.4);
+}
+
+[data-theme='wizarding'] .panel:hover {
+  border-color: rgba(228, 199, 102, 0.55);
+  box-shadow:
+    0 30px 70px -32px rgba(0, 0, 0, 0.98),
+    0 0 30px -8px rgba(201, 162, 39, 0.45),
+    inset 0 0 46px rgba(74, 40, 14, 0.34);
+}
+
+[data-theme='wizarding'] .neon-edge::after {
+  inset-inline: 22%;
+  background: linear-gradient(90deg, transparent, var(--accent-soft), transparent);
+  opacity: 0.7;
+}
+
+/* Buttons become enchanted brass. */
+[data-theme='wizarding'] .btn {
+  border-radius: 6px;
+}
+[data-theme='wizarding'] .btn.btn-primary {
+  background-image: linear-gradient(180deg, #e4c766, #c9a227 46%, #9c7a16);
+  color: #221604;
+  box-shadow:
+    0 10px 26px -14px rgba(201, 162, 39, 0.85),
+    inset 0 1px 0 rgba(255, 240, 200, 0.55),
+    inset 0 -1px 0 rgba(80, 55, 8, 0.6);
+}
+[data-theme='wizarding'] .btn:hover {
+  box-shadow:
+    0 0 0 1px rgba(228, 199, 102, 0.5),
+    0 0 24px -4px rgba(201, 162, 39, 0.7);
+}
+[data-theme='wizarding'] .btn.btn-icon {
+  border-radius: 999px;
+}
+
+[data-theme='wizarding'] .nav-pill {
+  border-radius: 4px;
+  border-color: rgba(228, 199, 102, 0.5);
+  background: linear-gradient(180deg, rgba(201, 162, 39, 0.06), rgba(201, 162, 39, 0.18));
+  box-shadow:
+    inset 0 0 12px rgba(201, 162, 39, 0.22),
+    0 0 16px -6px rgba(201, 162, 39, 0.7);
+}
+
+/* Everything on the page takes on old candlelit warmth. */
+[data-theme='wizarding'] main img {
+  filter: sepia(0.42) saturate(0.92) hue-rotate(-8deg) brightness(0.94) contrast(1.06);
+}
+[data-theme='wizarding'] #top img {
+  filter: sepia(0.4) saturate(0.95) hue-rotate(-8deg) brightness(0.95) contrast(1.05)
+    drop-shadow(0 24px 50px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 30px rgba(201, 162, 39, 0.24));
+}
+
+[data-theme='wizarding'] header img {
+  filter: sepia(0.35) saturate(0.9) brightness(0.96);
+}
+
+[data-theme='wizarding'] ::selection {
+  background: var(--accent-soft);
+  color: #1a1205;
+}
+
+/* The scrollbar is part of the set dressing too. */
+[data-theme='wizarding'] ::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--accent), #6b5210);
+}
+
+/* =====================================================================
+ * REDUCED MOTION
+ * Beams, motes, wand sparks and the swap overlay are all gated in JS too;
+ * this catches the CSS-only scenery.
+ * ===================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .atmos-beams,
+  .atmos-motes {
+    display: none;
+  }
+  .atmos-grid,
+  .atmos-scan {
+    opacity: 0.3;
+  }
+}
+
+/* Coarse pointers get a calmer page: no hover-only scenery, fewer beams. */
+@media (max-width: 767px) {
+  .atmos-beam:nth-child(n + 4) {
+    display: none;
+  }
+  .atmos-mote:nth-child(n + 13) {
+    display: none;
+  }
+  .atmos-grid {
+    height: 34vh;
+    opacity: 0.4;
+  }
+}
