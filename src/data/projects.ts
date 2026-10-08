@@ -134,4 +134,27 @@ export const archiveProjects: Project[] = [
     featured: false,
     year: '2026',
   },
+  {
+    id: 'movielander',
+    title: 'MovieLander',
+    category: 'Tanışma Uygulaması',
+    description:
+      'Sevdiğin film ve dizilere göre eşleştiren mobil tanışma uygulaması. Ortak bir Aftersun, ortak bir Avengers’tan daha çok şey söyler. Neon sinema temalı arayüz prototipi.',
+    tech: ['Flutter', 'Riverpod'],
+    image: '/images/projects/movielander.png',
+    repo: null,
+    featured: false,
+    year: '2026',
+  },
+  {
+    id: 'budget-tracker',
+    title: 'Budget Tracker',
+    category: 'Bütçe Uygulaması',
+    description: 'Gelir ve giderleri kaydedip toplamı anlık gösteren basit bütçe takip uygulaması.',
+    tech: ['Flutter', 'Firebase'],
+    image: '/images/projects/budget-tracker.png',
+    repo: null,
+    featured: false,
+    year: '2025',
+  },
 ]
