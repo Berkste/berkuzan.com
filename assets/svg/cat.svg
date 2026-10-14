@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 110" fill="none">
+  <defs>
+    <linearGradient id="furO" x1="80" y1="20" x2="80" y2="100">
+      <stop stop-color="#FBBF24"/><stop offset="0.55" stop-color="#F97316"/><stop offset="1" stop-color="#EA580C"/>
+    </linearGradient>
+    <linearGradient id="furL" x1="80" y1="30" x2="80" y2="90">
+      <stop stop-color="#FDE68A"/><stop offset="1" stop-color="#FB923C"/>
+    </linearGradient>
+    <filter id="catSh" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <g filter="url(#catSh)">
+    <ellipse cx="80" cy="104" rx="52" ry="6" fill="#000" opacity="0.18"/>
+    <!-- Tail (animated via canvas rotation) -->
+    <g id="tail">
+      <path d="M118 62 Q148 48 152 28 Q140 38 125 50" stroke="#EA580C" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <path d="M118 62 Q148 48 152 28" stroke="#FBBF24" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.5"/>
+    </g>
+    <!-- Body curled -->
+    <ellipse cx="72" cy="72" rx="46" ry="30" fill="url(#furO)" stroke="#000" stroke-width="3"/>
+    <path d="M48 68 Q58 78 48 82" stroke="#C2410C" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+    <path d="M88 68 Q98 78 88 82" stroke="#C2410C" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+    <!-- Head -->
+    <circle cx="58" cy="48" r="28" fill="url(#furL)" stroke="#000" stroke-width="3"/>
+    <!-- Ears -->
+    <path d="M38 32 L34 14 L48 26 Z" fill="#F97316" stroke="#000" stroke-width="2.5"/>
+    <path d="M78 32 L82 14 L68 26 Z" fill="#F97316" stroke="#000" stroke-width="2.5"/>
+    <path d="M40 28 L38 18 L44 24 Z" fill="#FDE68A"/>
+    <path d="M76 28 L78 18 L72 24 Z" fill="#FDE68A"/>
+    <!-- Closed eyes -->
+    <path d="M44 48 Q50 54 56 48" stroke="#7C2D12" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M60 48 Q66 54 72 48" stroke="#7C2D12" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- Nose & mouth -->
+    <ellipse cx="58" cy="56" rx="4" ry="3" fill="#FBBF24" stroke="#000" stroke-width="1.5"/>
+    <path d="M58 59 Q54 63 50 61 M58 59 Q62 63 66 61" stroke="#7C2D12" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- Whiskers -->
+    <line x1="32" y1="52" x2="14" y2="48" stroke="#FFF" stroke-width="1.5" opacity="0.7"/>
+    <line x1="32" y1="58" x2="14" y2="60" stroke="#FFF" stroke-width="1.5" opacity="0.7"/>
+    <line x1="84" y1="52" x2="102" y2="48" stroke="#FFF" stroke-width="1.5" opacity="0.7"/>
+    <line x1="84" y1="58" x2="102" y2="60" stroke="#FFF" stroke-width="1.5" opacity="0.7"/>
+    <!-- Paws -->
+    <ellipse cx="48" cy="92" rx="10" ry="7" fill="#FDE68A" stroke="#000" stroke-width="2"/>
+    <ellipse cx="92" cy="90" rx="10" ry="7" fill="#FDE68A" stroke="#000" stroke-width="2"/>
+    <!-- Zzz -->
+    <text x="108" y="28" font-family="Georgia,serif" font-size="14" fill="#FDE68A" opacity="0.85">z</text>
+    <text x="118" y="18" font-family="Georgia,serif" font-size="10" fill="#FDE68A" opacity="0.6">z</text>
+  </g>
+</svg>

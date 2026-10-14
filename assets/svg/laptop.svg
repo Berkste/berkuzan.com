@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 130" fill="none">
+  <defs>
+    <linearGradient id="lid" x1="100" y1="10" x2="100" y2="90">
+      <stop stop-color="#CBD5E1"/><stop offset="1" stop-color="#94A3B8"/>
+    </linearGradient>
+    <linearGradient id="base" x1="100" y1="90" x2="100" y2="120">
+      <stop stop-color="#64748B"/><stop offset="1" stop-color="#475569"/>
+    </linearGradient>
+    <filter id="lapSh"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-opacity="0.35"/></filter>
+  </defs>
+  <g filter="url(#lapSh)">
+    <path d="M20 95 L180 95 L175 115 L25 115 Z" fill="url(#base)" stroke="#000" stroke-width="3"/>
+    <path d="M30 15 L170 15 L165 95 L35 95 Z" fill="url(#lid)" stroke="#000" stroke-width="3"/>
+    <rect x="42" y="25" width="116" height="62" rx="4" fill="#E2E8F0" stroke="#64748B" stroke-width="2"/>
+    <!-- Stickers -->
+    <circle cx="65" cy="45" r="14" fill="#2563EB" stroke="#000" stroke-width="2"/>
+    <text x="65" y="49" text-anchor="middle" fill="#FFF" font-size="9" font-weight="bold">TS</text>
+    <circle cx="95" cy="40" r="14" fill="#EAB308" stroke="#000" stroke-width="2"/>
+    <text x="95" y="44" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">JS</text>
+    <circle cx="125" cy="45" r="14" fill="#3B82F6" stroke="#000" stroke-width="2"/>
+    <text x="125" y="49" text-anchor="middle" fill="#FFF" font-size="8" font-weight="bold">Py</text>
+    <circle cx="80" cy="68" r="12" fill="#06B6D4" stroke="#000" stroke-width="2"/>
+    <text x="80" y="72" text-anchor="middle" fill="#FFF" font-size="14">⚛</text>
+    <circle cx="110" cy="65" r="11" fill="#1F2937" stroke="#000" stroke-width="2"/>
+    <circle cx="110" cy="63" r="5" fill="#FFF"/>
+  </g>
+</svg>

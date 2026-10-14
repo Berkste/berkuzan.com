@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 300" fill="none">
+  <defs>
+    <linearGradient id="skin" x1="110" y1="40" x2="110" y2="120">
+      <stop stop-color="#FFDFC4"/><stop offset="1" stop-color="#EEC9A8"/>
+    </linearGradient>
+    <linearGradient id="hoodie" x1="110" y1="130" x2="110" y2="280">
+      <stop stop-color="#2A2A2A"/><stop offset="1" stop-color="#111111"/>
+    </linearGradient>
+    <filter id="softShadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <g filter="url(#softShadow)">
+    <!-- Chair -->
+    <path d="M55 255 Q110 240 165 255 L170 290 Q110 305 50 290 Z" fill="#1A1A1A" stroke="#000" stroke-width="3"/>
+    <ellipse cx="110" cy="292" rx="62" ry="10" fill="#000" opacity="0.25"/>
+    <!-- Body / hoodie -->
+    <path d="M62 145 Q110 125 158 145 L168 255 Q110 275 52 255 Z" fill="url(#hoodie)" stroke="#000" stroke-width="3"/>
+    <text x="110" y="205" text-anchor="middle" fill="#FFFFFF" font-family="monospace" font-size="22" font-weight="bold">&lt;/&gt;</text>
+    <!-- Arms -->
+    <path d="M52 158 Q25 175 22 210 Q28 218 48 200" fill="#1A1A1A" stroke="#000" stroke-width="3"/>
+    <path d="M168 158 Q195 175 198 210 Q192 218 172 200" fill="#1A1A1A" stroke="#000" stroke-width="3"/>
+    <ellipse cx="28" cy="212" rx="12" ry="10" fill="url(#skin)" stroke="#000" stroke-width="2.5"/>
+    <ellipse cx="192" cy="212" rx="12" ry="10" fill="url(#skin)" stroke="#000" stroke-width="2.5"/>
+    <!-- Head -->
+    <circle cx="110" cy="88" r="52" fill="url(#skin)" stroke="#000" stroke-width="3"/>
+    <!-- Hair -->
+    <path d="M58 78 Q62 28 110 22 Q158 28 162 78 Q150 48 110 42 Q70 48 58 78 Z" fill="#3D2314" stroke="#000" stroke-width="3"/>
+    <path d="M72 55 Q85 38 98 42" stroke="#2A1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M122 42 Q135 38 148 55" stroke="#2A1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <!-- Eyes (open - blink drawn in canvas overlay) -->
+    <ellipse cx="88" cy="88" rx="16" ry="18" fill="#FFFFFF" stroke="#000" stroke-width="2.5"/>
+    <ellipse cx="132" cy="88" rx="16" ry="18" fill="#FFFFFF" stroke="#000" stroke-width="2.5"/>
+    <circle cx="90" cy="90" r="5" fill="#000"/>
+    <circle cx="134" cy="90" r="5" fill="#000"/>
+    <circle cx="92" cy="86" r="2" fill="#FFF"/>
+    <circle cx="136" cy="86" r="2" fill="#FFF"/>
+    <!-- Mouth -->
+    <path d="M98 112 Q110 120 122 112" stroke="#000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

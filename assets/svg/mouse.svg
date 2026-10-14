@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 70" fill="none">
+  <defs>
+    <linearGradient id="ms" x1="25" y1="0" x2="25" y2="70">
+      <stop stop-color="#64748B"/><stop offset="1" stop-color="#475569"/>
+    </linearGradient>
+    <filter id="msSh"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.3"/></filter>
+  </defs>
+  <g filter="url(#msSh)">
+    <ellipse cx="25" cy="38" rx="20" ry="28" fill="url(#ms)" stroke="#000" stroke-width="2.5"/>
+    <ellipse cx="25" cy="18" rx="8" ry="5" fill="#94A3B8" stroke="#000" stroke-width="1.5"/>
+    <line x1="25" y1="23" x2="25" y2="55" stroke="#334155" stroke-width="2"/>
+    <ellipse cx="25" cy="58" rx="10" ry="4" fill="#334155"/>
+  </g>
+</svg>

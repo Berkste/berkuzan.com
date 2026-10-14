@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" fill="none">
+  <defs>
+    <linearGradient id="wallG" x1="640" y1="0" x2="640" y2="720">
+      <stop stop-color="#1E2938"/><stop offset="0.6" stop-color="#152238"/><stop offset="1" stop-color="#0F1828"/>
+    </linearGradient>
+    <linearGradient id="floorG" x1="640" y1="500" x2="640" y2="720">
+      <stop stop-color="#1A2332"/><stop offset="1" stop-color="#0B1426"/>
+    </linearGradient>
+    <radialGradient id="winGlow" cx="640" cy="380" r="280">
+      <stop stop-color="#F59E0B" stop-opacity="0.12"/><stop offset="0.5" stop-color="#22D3EE" stop-opacity="0.06"/><stop offset="1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#wallG)"/>
+  <rect y="480" width="1280" height="240" fill="url(#floorG)"/>
+  <!-- Window -->
+  <rect x="480" y="120" width="320" height="220" rx="4" fill="#0F172A" stroke="#D4A853" stroke-width="4"/>
+  <rect x="494" y="134" width="292" height="192" fill="#1E3A5F"/>
+  <linearGradient id="sky" x1="640" y1="134" x2="640" y2="326">
+    <stop stop-color="#1E3A5F"/><stop offset="0.5" stop-color="#F59E0B" stop-opacity="0.4"/><stop offset="1" stop-color="#0F172A"/>
+  </linearGradient>
+  <rect x="494" y="134" width="292" height="192" fill="url(#sky)"/>
+  <line x1="640" y1="134" x2="640" y2="326" stroke="#D4A853" stroke-width="2" opacity="0.5"/>
+  <line x1="494" y1="230" x2="786" y2="230" stroke="#D4A853" stroke-width="2" opacity="0.5"/>
+  <ellipse cx="640" cy="480" rx="320" ry="80" fill="url(#winGlow)"/>
+  <!-- Wall shelf -->
+  <g transform="translate(100,130)">
+    <rect x="0" y="0" width="160" height="14" fill="#5C4033" stroke="#000" stroke-width="2"/>
+    <rect x="-6" y="12" width="172" height="8" fill="#4A3728" stroke="#000" stroke-width="1.5"/>
+    <circle cx="120" cy="-8" r="16" fill="#FBBF24" stroke="#000" stroke-width="2"/>
+    <text x="120" y="-4" text-anchor="middle" fill="#000" font-size="5" font-weight="bold">KEEP</text>
+    <text x="120" y="2" text-anchor="middle" fill="#000" font-size="4" font-weight="bold">CODING</text>
+  </g>
+  <!-- Posters -->
+  <g transform="translate(500,155)">
+    <rect width="130" height="95" rx="4" fill="#111" stroke="#000" stroke-width="2.5"/>
+    <rect x="6" y="6" width="118" height="83" fill="#1A1A1A"/>
+    <text x="65" y="38" text-anchor="middle" fill="#FFF" font-size="11" font-weight="bold">EAT SLEEP</text>
+    <text x="65" y="58" text-anchor="middle" fill="#4ADE80" font-size="12" font-weight="bold">CODE</text>
+    <text x="65" y="74" text-anchor="middle" fill="#FFF" font-size="11" font-weight="bold">REPEAT</text>
+  </g>
+  <g transform="translate(660,155)">
+    <rect width="130" height="95" rx="4" fill="#111" stroke="#000" stroke-width="2.5"/>
+    <rect x="6" y="6" width="118" height="83" fill="#1A1A1A"/>
+    <circle cx="65" cy="35" r="14" fill="#FFF" stroke="#000" stroke-width="1.5"/>
+    <text x="65" y="58" text-anchor="middle" fill="#FFF" font-size="9" font-weight="bold">MAKE SOMETHING</text>
+    <text x="65" y="74" text-anchor="middle" fill="#EF4444" font-size="10" font-weight="bold">PEOPLE LOVE</text>
+  </g>
+  <!-- Neon sign -->
+  <text x="1080" y="115" fill="#00CCFF" font-family="monospace" font-size="52" font-weight="bold" filter="url(#neonF)">&lt;/&gt;</text>
+  <defs>
+    <filter id="neonF"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <!-- Sticky note -->
+  <rect x="1040" y="145" width="72" height="58" rx="3" fill="#FDE68A" stroke="#000" stroke-width="2" transform="rotate(-3 1076 174)"/>
+  <text x="1052" y="168" fill="#000" font-size="8" transform="rotate(-3 1076 174)"> Code</text>
+  <text x="1052" y="182" fill="#000" font-size="8" transform="rotate(-3 1076 174)"> Coffee</text>
+  <text x="1052" y="196" fill="#000" font-size="8" transform="rotate(-3 1076 174)"> Debug</text>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200" fill="none">
+  <defs>
+    <linearGradient id="woodTop" x1="600" y1="0" x2="600" y2="40">
+      <stop stop-color="#A67C52"/><stop offset="1" stop-color="#7A5434"/>
+    </linearGradient>
+    <linearGradient id="woodFront" x1="600" y1="40" x2="600" y2="180">
+      <stop stop-color="#6B4423"/><stop offset="1" stop-color="#4A2F17"/>
+    </linearGradient>
+    <linearGradient id="woodEdge" x1="0" y1="0" x2="0" y2="200">
+      <stop stop-color="#8B6340"/><stop offset="1" stop-color="#5C4033"/>
+    </linearGradient>
+    <filter id="deskSh"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-opacity="0.4"/></filter>
+  </defs>
+  <g filter="url(#deskSh)">
+    <ellipse cx="600" cy="188" rx="560" ry="18" fill="#000" opacity="0.22"/>
+    <!-- Desktop surface -->
+    <path d="M20 28 L1180 28 L1160 48 L40 48 Z" fill="url(#woodTop)" stroke="#000" stroke-width="3"/>
+    <path d="M40 48 L1160 48 L1160 52 L40 52 Z" fill="#C9A66B" opacity="0.35"/>
+    <!-- Front face -->
+    <path d="M40 52 L1160 52 L1140 168 L60 168 Z" fill="url(#woodFront)" stroke="#000" stroke-width="3"/>
+    <!-- Wood grain lines -->
+    <path d="M120 60 Q200 90 120 120 M300 65 Q380 100 300 140 M500 58 Q580 95 500 135" stroke="#5C4033" stroke-width="1.5" opacity="0.25" fill="none"/>
+    <!-- Legs -->
+    <path d="M90 168 L85 195 L110 195 L115 168 Z" fill="url(#woodEdge)" stroke="#000" stroke-width="2.5"/>
+    <path d="M1090 168 L1085 195 L1110 195 L1115 168 Z" fill="url(#woodEdge)" stroke="#000" stroke-width="2.5"/>
+    <!-- Edge highlight -->
+    <path d="M60 52 L1140 52" stroke="#D4A853" stroke-width="2" opacity="0.4"/>
+  </g>
+</svg>

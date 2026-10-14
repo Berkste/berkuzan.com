@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+  <defs>
+    <radialGradient id="planet" cx="0.35" cy="0.35" r="0.65">
+      <stop stop-color="#14B8A6"/><stop offset="0.6" stop-color="#0F766E"/><stop offset="1" stop-color="#0F172A"/>
+    </radialGradient>
+    <filter id="planetGlow"><feGaussianBlur stdDeviation="2"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <!-- Orbit ring -->
+  <ellipse cx="40" cy="40" rx="36" ry="12" stroke="#F59E0B" stroke-width="1" fill="none" opacity="0.4" transform="rotate(-20 40 40)"/>
+  <!-- Planet -->
+  <circle cx="40" cy="40" r="24" fill="url(#planet)" filter="url(#planetGlow)"/>
+  <!-- Continents -->
+  <path d="M28 32 Q35 28 42 34 Q38 40 30 38 Z" fill="#059669" opacity="0.6"/>
+  <path d="M44 42 Q50 38 52 46 Q46 50 42 46 Z" fill="#059669" opacity="0.5"/>
+  <!-- Atmosphere -->
+  <circle cx="40" cy="40" r="26" stroke="#67E8F9" stroke-width="1" fill="none" opacity="0.3"/>
+  <!-- Moon -->
+  <circle cx="62" cy="22" r="5" fill="#94A3B8" opacity="0.7"/>
+  <!-- Highlight -->
+  <ellipse cx="32" cy="32" rx="8" ry="5" fill="#fff" opacity="0.15" transform="rotate(-30 32 32)"/>
+</svg>
